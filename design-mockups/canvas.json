@@ -1,18 +1,30 @@
 {
+  "pages": [
+    { "id": "premium", "name": "Premium" },
+    { "id": "calida", "name": "Cálida" }
+  ],
   "artboards": [
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 1340 },
-    { "file": "Categoria.dc.html", "x": 470, "y": 0, "w": 390, "h": 840 },
-    { "file": "Detalle.dc.html", "x": 940, "y": 0, "w": 390, "h": 920 },
-    { "file": "Juegos.dc.html", "x": 1410, "y": 0, "w": 390, "h": 920 },
-    { "file": "Sudoku.dc.html", "x": 1880, "y": 0, "w": 390, "h": 780 }
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 1380, "page": "premium" },
+    { "file": "Categoria.dc.html", "x": 470, "y": 0, "w": 390, "h": 840, "page": "premium" },
+    { "file": "Detalle.dc.html", "x": 940, "y": 0, "w": 390, "h": 940, "page": "premium" },
+    { "file": "Juegos.dc.html", "x": 1410, "y": 0, "w": 390, "h": 1260, "page": "premium" },
+    { "file": "JuegoDetalle.dc.html", "x": 1880, "y": 0, "w": 390, "h": 1020, "page": "premium" },
+    { "file": "Sudoku.dc.html", "x": 2350, "y": 0, "w": 390, "h": 780, "page": "premium" },
+
+    { "file": "MainCalida.dc.html", "x": 0, "y": 0, "w": 390, "h": 1260, "page": "calida" },
+    { "file": "DetalleCalida.dc.html", "x": 470, "y": 0, "w": 390, "h": 940, "page": "calida" },
+    { "file": "JuegoDetalleCalida.dc.html", "x": 940, "y": 0, "w": 390, "h": 1020, "page": "calida" }
   ],
   "annotations": [
-    { "id": "note-intro", "x": 0, "y": -180, "w": 520, "text": "Gógoblu — rediseño del menú · Dirección LIMPIA / PREMIUM\nEditorial, mucho aire, líneas finas, dorado como acento fino.\nTipografías: Cormorant Garamond (títulos) + Manrope (texto).\nSin buscador." },
-    { "id": "note-home", "x": 0, "y": -70, "w": 390, "text": "HOME · Producto del mes (hero de temporada) + Novedades + carta como lista editorial." },
-    { "id": "note-categoria", "x": 470, "y": -70, "w": 390, "text": "CATEGORÍA · Lista con miniatura, precio y estado 'foto pronto'. Etiqueta 'Nuevo' donde aplica. Cada fila abre el detalle." },
-    { "id": "note-detalle", "x": 940, "y": -95, "w": 390, "text": "DETALLE (nuevo) · Foto grande, descripción, etiquetas, nota de disponibilidad (temporada) y adiciones sugeridas. Este es el que 'vende'." },
-    { "id": "note-juegos", "x": 1410, "y": -70, "w": 390, "text": "JUEGOS · Estilo premium, 'creados en la casa' destacados." },
-    { "id": "note-sudoku", "x": 1880, "y": -70, "w": 390, "text": "SUDOKU (opcional) · Restilizado al look premium." }
+    { "id": "note-prem-intro", "x": 0, "y": -175, "w": 560, "text": "PÁGINA PREMIUM · Editorial, aire, líneas finas, dorado sutil. Cormorant Garamond + Manrope. Incluye: home con carrusel de 'producto del mes', novedades, detalle de producto, juegos con fichas ricas y ficha de juego.", "page": "premium" },
+    { "id": "note-prem-home", "x": 0, "y": -65, "w": 390, "text": "HOME · Producto del mes como CARRUSEL (varios posibles, con indicadores) + Novedades + carta.", "page": "premium" },
+    { "id": "note-prem-juegos", "x": 1410, "y": -65, "w": 390, "text": "JUEGOS · Filtros, 'de la casa' destacados y fichas con jugadores y tiempo. →", "page": "premium" },
+    { "id": "note-prem-ficha", "x": 1880, "y": -65, "w": 390, "text": "FICHA DE JUEGO (nueva) · Imagen, jugadores, duración, edad, dificultad, descripción y 'pídelo en barra'.", "page": "premium" },
+
+    { "id": "note-cal-intro", "x": 0, "y": -155, "w": 560, "text": "PÁGINA CÁLIDA · Misma estructura y features, con más calidez: crema, tarjetas redondeadas, sombras suaves, banda verde. DM Serif Display + DM Sans. Compara estas 3 pantallas clave con las de Premium.", "page": "calida" },
+    { "id": "note-cal-home", "x": 0, "y": -45, "w": 390, "text": "HOME cálido", "page": "calida" },
+    { "id": "note-cal-det", "x": 470, "y": -45, "w": 390, "text": "DETALLE de producto cálido", "page": "calida" },
+    { "id": "note-cal-juego", "x": 940, "y": -45, "w": 390, "text": "FICHA de juego cálida", "page": "calida" }
   ],
-  "launch": { "view": "canvas" }
+  "launch": { "view": "canvas", "page": "premium" }
 }

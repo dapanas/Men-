@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: "Manrope", "Helvetica Neue", Arial, sans-serif; }
+    a { color: #315659; text-decoration: none; } a:hover { color: #24413f; }
+    * { box-sizing: border-box; }
+    .serif { font-family: "Cormorant Garamond", Georgia, serif; }
+    .eyebrow { font-size: 11px; letter-spacing: 2.4px; text-transform: uppercase; font-weight: 600; }
+    .tag { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+    .stat { flex: 1; text-align: center; padding: 4px 0; }
+    .stat-val { font-family: "Cormorant Garamond", Georgia, serif; font-size: 22px; color: #22302E; font-weight: 600; margin-top: 6px; }
+    .stat-lbl { font-size: 10px; letter-spacing: 0.8px; text-transform: uppercase; color: #A79F8C; margin-top: 2px; font-weight: 600; }
+  </style>
+</helmet>
+
+<div style="width: 390px; min-height: 1000px; background: #FBFAF6; color: #22302E;">
+
+  <!-- Box art -->
+  <div style="height: 260px; background: linear-gradient(160deg, #35595B, #1C3634); position: relative; display: flex; align-items: center; justify-content: center;">
+    <div style="position: absolute; top: 20px; left: 20px; width: 40px; height: 40px; border-radius: 50%; background: rgba(251,250,246,0.92); display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22302E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </div>
+    <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1" fill="rgba(255,255,255,0.85)"/><circle cx="15.5" cy="8.5" r="1" fill="rgba(255,255,255,0.85)"/><circle cx="12" cy="12" r="1" fill="rgba(255,255,255,0.85)"/><circle cx="8.5" cy="15.5" r="1" fill="rgba(255,255,255,0.85)"/><circle cx="15.5" cy="15.5" r="1" fill="rgba(255,255,255,0.85)"/></svg>
+  </div>
+
+  <div style="padding: 24px 26px 30px 26px;">
+    <div class="eyebrow" style="color: #B79448;">Juego · Estrategia</div>
+    <div class="serif" style="margin-top: 8px; font-size: 38px; line-height: 1;">Catán</div>
+    <div style="margin-top: 6px; color: #A79F8C; font-size: 13px;">Klaus Teuber · 1995</div>
+
+    <!-- Stats -->
+    <div style="margin-top: 22px; display: flex; background: #FFFFFF; border: 1px solid #E7DFCB; border-radius: 4px; padding: 14px 6px;">
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+        <div class="stat-val">3–4</div>
+        <div class="stat-lbl">Jugadores</div>
+      </div>
+      <div style="width: 1px; background: #ECE7DB;"></div>
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div class="stat-val">60'</div>
+        <div class="stat-lbl">Duración</div>
+      </div>
+      <div style="width: 1px; background: #ECE7DB;"></div>
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/></svg>
+        <div class="stat-val">10+</div>
+        <div class="stat-lbl">Edad</div>
+      </div>
+      <div style="width: 1px; background: #ECE7DB;"></div>
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20v-4" transform="translate(-1,0)"/></svg>
+        <div class="stat-val">Media</div>
+        <div class="stat-lbl">Dificultad</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 20px; color: #6E6656; font-size: 14.5px; line-height: 1.6;">Los jugadores colonizan la isla de Catán construyendo caminos, aldeas y ciudades. Cada turno se recolectan y comercian recursos —madera, ladrillo, lana, trigo y mineral— para expandirse. El primero en llegar a 10 puntos de victoria gana. Un clásico moderno, fácil de aprender y distinto en cada partida.</p>
+
+    <!-- Tags -->
+    <div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px;">
+      <span class="tag" style="background: #E4EEEA; color: #2E6E5B;">Estrategia</span>
+      <span class="tag" style="background: #EDE7D8; color: #7A6A3A;">Comercio</span>
+      <span class="tag" style="background: #EDE7D8; color: #7A6A3A;">Gestión de recursos</span>
+    </div>
+
+    <!-- How to get it -->
+    <div style="margin-top: 24px; display: flex; align-items: center; gap: 12px; background: linear-gradient(120deg, #315659, #223F3E); border-radius: 4px; padding: 16px 18px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/></svg>
+      <div style="flex-grow: 1;">
+        <div style="font-size: 14px; font-weight: 700; color: #F6EFE1;">Pídelo en la barra</div>
+        <div style="font-size: 12px; color: #B7C4C2; margin-top: 2px;">Gratis con tu consumo. Te lo llevamos a la mesa.</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

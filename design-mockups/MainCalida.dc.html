@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif; }
+    a { color: #315659; text-decoration: none; } a:hover { color: #24413f; }
+    * { box-sizing: border-box; }
+    .serif { font-family: "DM Serif Display", Georgia, serif; }
+    .eyebrow { font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 700; }
+    .tag { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; letter-spacing: 0.6px; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+    .card { background: #FFFCF4; border: 1px solid #EEE1C6; border-radius: 18px; box-shadow: 0 8px 20px rgba(49,86,89,0.07); }
+    .price { font-family: "DM Serif Display", Georgia, serif; font-size: 19px; color: #315659; }
+    .season { width: 322px; flex-shrink: 0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 24px rgba(49,86,89,0.1); }
+  </style>
+</helmet>
+
+<div style="width: 390px; min-height: 1240px; background: #F6EEE0; color: #2B2620;">
+
+  <!-- Header band -->
+  <div style="background: #315659; color: #F6EFE1; padding: 28px 24px 26px 24px; border-radius: 0 0 28px 28px;">
+    <div style="display: flex; align-items: center; gap: 11px;">
+      <div style="width: 42px; height: 42px; border-radius: 13px; background: #D7BC77; display: flex; align-items: center; justify-content: center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M7 3c-.3.6-.3 1.4 0 2M11 3c-.3.6-.3 1.4 0 2M15 3c-.3.6-.3 1.4 0 2"/></svg>
+      </div>
+      <div class="serif" style="font-size: 30px; line-height: 1;">Gógoblu</div>
+    </div>
+    <div style="margin-top: 14px; font-size: 15px; color: #E7D9B5; font-weight: 600;">Café de especialidad &amp; juegos de mesa</div>
+  </div>
+
+  <!-- Seasonal carousel -->
+  <div style="padding: 22px 0 0 0;">
+    <div class="eyebrow" style="padding: 0 24px; color: #B0843C;">✦ Producto del mes</div>
+    <div style="margin-top: 12px; display: flex; gap: 14px; overflow: hidden; padding: 0 24px;">
+      <div class="season">
+        <div style="height: 176px; background: linear-gradient(155deg, #C79A5B, #7A4A28); position: relative; display: flex; align-items: center; justify-content: center;">
+          <span class="tag" style="position: absolute; top: 14px; left: 14px; background: #D7BC77; color: #2B3F2F;">✦ Temporada</span>
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M8 2c-.4.7-.4 1.3 0 2M12 2c-.4.7-.4 1.3 0 2"/></svg>
+        </div>
+        <div style="background: #FFFCF4; padding: 16px 18px 18px 18px;">
+          <div class="serif" style="font-size: 24px; line-height: 1.05;">Latte de calabaza</div>
+          <div style="margin-top: 6px; color: #8C8272; font-size: 13px; line-height: 1.45;">Espresso, leche cremada y especias. Solo por octubre.</div>
+          <div style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between;">
+            <span class="price" style="font-size: 21px;">$12.000</span>
+            <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 700; color: #315659;">Ver detalle
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="season">
+        <div style="height: 176px; background: linear-gradient(155deg, #B98442, #6E4522); display: flex; align-items: center; justify-content: center;">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16"/><path d="M5 21v-6a7 7 0 0 1 14 0v6"/></svg>
+        </div>
+        <div style="background: #FFFCF4; padding: 16px 18px 18px 18px;">
+          <div class="serif" style="font-size: 24px;">Torta de especias</div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 6px; justify-content: center; margin-top: 14px;">
+      <span style="width: 18px; height: 5px; border-radius: 3px; background: #315659;"></span>
+      <span style="width: 5px; height: 5px; border-radius: 3px; background: #D6C9AE;"></span>
+    </div>
+  </div>
+
+  <!-- Novedades -->
+  <div style="padding: 24px 0 0 0;">
+    <div class="eyebrow" style="padding: 0 24px; color: #B0843C;">Novedades</div>
+    <div style="margin-top: 12px; display: flex; gap: 14px; overflow: hidden; padding: 0 24px;">
+      <div style="width: 150px; flex-shrink: 0;">
+        <div style="height: 118px; border-radius: 16px; background: linear-gradient(150deg, #C79A5B, #7A4A28); position: relative; box-shadow: 0 6px 16px rgba(49,86,89,0.08);">
+          <span class="tag" style="position: absolute; top: 10px; left: 10px; background: #315659; color: #F6EFE1;">Nuevo</span>
+        </div>
+        <div style="margin-top: 9px; font-weight: 600; font-size: 14px;">Cold brew de naranja</div>
+        <div class="price" style="margin-top: 1px; font-size: 17px;">$10.500</div>
+      </div>
+      <div style="width: 150px; flex-shrink: 0;">
+        <div style="height: 118px; border-radius: 16px; background: linear-gradient(150deg, #D9B98A, #9C6B3E); position: relative; box-shadow: 0 6px 16px rgba(49,86,89,0.08);">
+          <span class="tag" style="position: absolute; top: 10px; left: 10px; background: #315659; color: #F6EFE1;">Nuevo</span>
+        </div>
+        <div style="margin-top: 9px; font-weight: 600; font-size: 14px;">Cheesecake maracuyá</div>
+        <div class="price" style="margin-top: 1px; font-size: 17px;">$9.500</div>
+      </div>
+      <div style="width: 40px; flex-shrink: 0;"></div>
+    </div>
+  </div>
+
+  <!-- Categories grid -->
+  <div style="padding: 26px 24px 0 24px;">
+    <div class="eyebrow" style="color: #B0843C; margin-bottom: 12px;">Explora la carta</div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px;">
+      <div class="card" style="padding: 15px;">
+        <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/></svg></div>
+        <div style="margin-top: 11px; font-weight: 600; font-size: 14.5px;">Bebidas calientes</div>
+      </div>
+      <div class="card" style="padding: 15px;">
+        <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16"/><path d="M5 21v-6a7 7 0 0 1 14 0v6"/><path d="M12 8V5"/></svg></div>
+        <div style="margin-top: 11px; font-weight: 600; font-size: 14.5px;">Productos dulces</div>
+      </div>
+      <div class="card" style="padding: 15px;">
+        <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11c2-4 16-4 18 0"/><path d="M4 11c0 5 3 8 8 8s8-3 8-8"/></svg></div>
+        <div style="margin-top: 11px; font-weight: 600; font-size: 14.5px;">Productos salados</div>
+      </div>
+      <div class="card" style="padding: 15px;">
+        <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8z"/><path d="M9 8V5a3 3 0 0 1 6 0v3"/></svg></div>
+        <div style="margin-top: 11px; font-weight: 600; font-size: 14.5px;">Bebidas frías</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Games highlight -->
+  <div style="padding: 14px 24px 0 24px;">
+    <div style="display: flex; align-items: center; gap: 14px; background: #315659; color: #F6EFE1; border-radius: 18px; padding: 16px 18px;">
+      <div style="width: 44px; height: 44px; border-radius: 13px; background: rgba(215,188,119,0.22); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1" fill="#D7BC77"/><circle cx="15.5" cy="8.5" r="1" fill="#D7BC77"/><circle cx="12" cy="12" r="1" fill="#D7BC77"/><circle cx="8.5" cy="15.5" r="1" fill="#D7BC77"/><circle cx="15.5" cy="15.5" r="1" fill="#D7BC77"/></svg>
+      </div>
+      <div style="flex-grow: 1;">
+        <div class="serif" style="font-size: 20px;">Juegos de mesa</div>
+        <div style="font-size: 12px; color: #B7C4C2; margin-top: 1px;">47 títulos · 5 de la casa</div>
+      </div>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+  </div>
+
+  <div style="padding: 22px 24px 30px 24px; text-align: center; color: #A99E88; font-size: 11.5px;">Menú actualizado en tiempo real · Gógoblu ☕</div>
+
+</div>
+</x-dc>
+</body>
+</html>

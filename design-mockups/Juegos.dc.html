@@ -16,86 +16,145 @@
     * { box-sizing: border-box; }
     .serif { font-family: "Cormorant Garamond", Georgia, serif; }
     .eyebrow { font-size: 11px; letter-spacing: 2.4px; text-transform: uppercase; font-weight: 600; }
-    .pill { border: 1px solid #E4DAC0; border-radius: 999px; padding: 7px 13px; font-size: 13px; color: #4A4335; font-weight: 500; background: transparent; }
-    .pill-house { background: #315659; color: #F6EFE1; border-radius: 999px; padding: 7px 13px; font-size: 13px; font-weight: 600; }
+    .chip { border: 1px solid #E4DAC0; border-radius: 999px; padding: 7px 14px; font-size: 12.5px; color: #6E6656; font-weight: 600; white-space: nowrap; }
+    .chip-active { background: #315659; border: 1px solid #315659; color: #F6EFE1; border-radius: 999px; padding: 7px 14px; font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+    .meta { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; color: #857C6A; font-weight: 500; }
+    .gcard { display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #ECE7DB; }
   </style>
 </helmet>
 
-<div style="width: 390px; min-height: 900px; background: #FBFAF6; color: #22302E;">
+<div style="width: 390px; min-height: 1240px; background: #FBFAF6; color: #22302E;">
 
   <!-- Header -->
-  <div style="padding: 22px 26px 18px 26px;">
+  <div style="padding: 22px 26px 16px 26px;">
     <div style="display: flex; align-items: center; gap: 12px;">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
       <div class="eyebrow" style="color: #B79448;">Carta · Juegos</div>
     </div>
-    <div class="serif" style="margin-top: 12px; font-size: 34px; line-height: 1; color: #22302E;">Juegos de mesa</div>
-    <div style="margin-top: 6px; color: #A79F8C; font-size: 13px;">47 títulos para jugar aquí</div>
+    <div class="serif" style="margin-top: 12px; font-size: 34px; line-height: 1;">Juegos de mesa</div>
+    <div style="margin-top: 6px; color: #A79F8C; font-size: 13px;">47 títulos para jugar aquí · sin costo con tu consumo</div>
   </div>
 
-  <div style="height: 1px; background: #ECE7DB; margin: 0 26px;"></div>
+  <!-- Filter chips -->
+  <div style="display: flex; gap: 8px; overflow: hidden; padding: 0 26px 4px 26px;">
+    <span class="chip-active">Todos</span>
+    <span class="chip">De la casa</span>
+    <span class="chip">Estrategia</span>
+    <span class="chip">Familiar</span>
+    <span class="chip">Rápidos</span>
+  </div>
 
-  <!-- De la casa -->
-  <div style="padding: 22px 26px 0 26px;">
+  <!-- De la casa (featured) -->
+  <div style="padding: 20px 26px 0 26px;">
     <div class="eyebrow" style="color: #B79448; display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
       <span style="width: 18px; height: 1px; background: #D7BC77; display: inline-block;"></span> Creados en la casa
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <span class="pill-house">Mor-c</span>
-      <span class="pill-house">Creactiva</span>
-      <span class="pill-house">Monta la ola</span>
-      <span class="pill-house">Incoleto</span>
-      <span class="pill-house">Palabras de pelos</span>
+    <div style="display: flex; gap: 14px; overflow: hidden;">
+      <div style="width: 175px; flex-shrink: 0; border: 1px solid #E7DFCB; border-radius: 4px; overflow: hidden; background: #FFF;">
+        <div style="height: 110px; background: linear-gradient(150deg, #35595B, #1E3A38); position: relative; display:flex; align-items:center; justify-content:center;">
+          <span style="position:absolute; top:10px; left:10px; font-size: 9.5px; letter-spacing:1px; text-transform:uppercase; font-weight:700; padding:3px 8px; border-radius:999px; background:#D7BC77; color:#2B3F2F;">De la casa</span>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+        </div>
+        <div style="padding: 12px 13px 14px 13px;">
+          <div class="serif" style="font-size: 20px; line-height: 1;">Mor-c</div>
+          <div style="margin-top: 8px; display: flex; gap: 12px;">
+            <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>2-5</span>
+            <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+          </div>
+        </div>
+      </div>
+      <div style="width: 175px; flex-shrink: 0; border: 1px solid #E7DFCB; border-radius: 4px; overflow: hidden; background: #FFF;">
+        <div style="height: 110px; background: linear-gradient(150deg, #6E4522, #3E2413); position: relative; display:flex; align-items:center; justify-content:center;">
+          <span style="position:absolute; top:10px; left:10px; font-size: 9.5px; letter-spacing:1px; text-transform:uppercase; font-weight:700; padding:3px 8px; border-radius:999px; background:#D7BC77; color:#2B3F2F;">De la casa</span>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+        </div>
+        <div style="padding: 12px 13px 14px 13px;">
+          <div class="serif" style="font-size: 20px; line-height: 1;">Creactiva</div>
+          <div style="margin-top: 8px; display: flex; gap: 12px;">
+            <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>3-8</span>
+            <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>20 min</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- All -->
+  <!-- Full collection: rich list cards -->
   <div style="padding: 26px 26px 30px 26px;">
-    <div class="eyebrow" style="color: #A79F8C; margin-bottom: 12px;">Toda la colección</div>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <span class="pill">Catán</span>
-      <span class="pill">Carcassonne</span>
-      <span class="pill">Ticket to ride</span>
-      <span class="pill">Azul</span>
-      <span class="pill">King Domino</span>
-      <span class="pill">Uno</span>
-      <span class="pill">Dos</span>
-      <span class="pill">Virus</span>
-      <span class="pill">Sushi Go</span>
-      <span class="pill">The mind</span>
-      <span class="pill">Flip 7</span>
-      <span class="pill">Take 6</span>
-      <span class="pill">Cabo</span>
-      <span class="pill">Spot it</span>
-      <span class="pill">Bandido</span>
-      <span class="pill">Get on board</span>
-      <span class="pill">Go Town</span>
-      <span class="pill">Kollide</span>
-      <span class="pill">Risk</span>
-      <span class="pill">Monopoly Deal</span>
-      <span class="pill">Cranium</span>
-      <span class="pill">Pictionary</span>
-      <span class="pill">Scrabble</span>
-      <span class="pill">Adivina Quién</span>
-      <span class="pill">Basta 2.0</span>
-      <span class="pill">Hues and cues</span>
-      <span class="pill">Cards vs Gravity</span>
-      <span class="pill">Sleeping queens</span>
-      <span class="pill">Cockroach poker</span>
-      <span class="pill">Gatitos explosivos</span>
-      <span class="pill">Polilla tramposa</span>
-      <span class="pill">Fantasma Blitz</span>
-      <span class="pill">Looping plane</span>
-      <span class="pill">Sling Hockey</span>
-      <span class="pill">Tinderblox</span>
-      <span class="pill">Astucia naval</span>
-      <span class="pill">Jenga</span>
-      <span class="pill">Dominó</span>
-      <span class="pill">Parqués</span>
-      <span class="pill">Naipes</span>
-      <span class="pill">Ajedrez</span>
-      <span class="pill">Taco, gato, cabra…</span>
+    <div class="eyebrow" style="color: #A79F8C; margin-bottom: 4px;">Toda la colección</div>
+
+    <div class="gcard">
+      <div style="width: 62px; height: 62px; border-radius: 4px; flex-shrink: 0; background: linear-gradient(150deg, #B5762F, #7A4A1E); border: 1px solid #E7DFCB;"></div>
+      <div style="flex-grow: 1;">
+        <div style="display: flex; align-items: center; gap: 8px;"><div class="serif" style="font-size: 21px;">Catán</div></div>
+        <div style="margin-top: 2px; color: #857C6A; font-size: 12px; line-height: 1.35;">Comercia, construye y coloniza la isla.</div>
+        <div style="margin-top: 6px; display: flex; gap: 12px;">
+          <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>3-4</span>
+          <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>60 min</span>
+          <span class="meta" style="color:#2E6E5B;">Estrategia</span>
+        </div>
+      </div>
+      <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
     </div>
+
+    <div class="gcard">
+      <div style="width: 62px; height: 62px; border-radius: 4px; flex-shrink: 0; background: linear-gradient(150deg, #4E7C8B, #2C4A55); border: 1px solid #E7DFCB;"></div>
+      <div style="flex-grow: 1;">
+        <div class="serif" style="font-size: 21px;">Azul</div>
+        <div style="margin-top: 2px; color: #857C6A; font-size: 12px; line-height: 1.35;">Compón mosaicos de azulejos coloridos.</div>
+        <div style="margin-top: 6px; display: flex; gap: 12px;">
+          <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>2-4</span>
+          <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>35 min</span>
+          <span class="meta" style="color:#2E6E5B;">Abstracto</span>
+        </div>
+      </div>
+      <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+
+    <div class="gcard">
+      <div style="width: 62px; height: 62px; border-radius: 4px; flex-shrink: 0; background: linear-gradient(150deg, #C0562F, #7C3016); border: 1px solid #E7DFCB;"></div>
+      <div style="flex-grow: 1;">
+        <div class="serif" style="font-size: 21px;">Uno</div>
+        <div style="margin-top: 2px; color: #857C6A; font-size: 12px; line-height: 1.35;">El clásico de cartas rápido y caótico.</div>
+        <div style="margin-top: 6px; display: flex; gap: 12px;">
+          <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>2-10</span>
+          <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>15 min</span>
+          <span class="meta" style="color:#2E6E5B;">Familiar</span>
+        </div>
+      </div>
+      <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+
+    <div class="gcard">
+      <div style="width: 62px; height: 62px; border-radius: 4px; flex-shrink: 0; background: linear-gradient(150deg, #8A9A3E, #4E5A22); border: 1px solid #E7DFCB;"></div>
+      <div style="flex-grow: 1;">
+        <div class="serif" style="font-size: 21px;">Ticket to Ride</div>
+        <div style="margin-top: 2px; color: #857C6A; font-size: 12px; line-height: 1.35;">Conecta ciudades con rutas de tren.</div>
+        <div style="margin-top: 6px; display: flex; gap: 12px;">
+          <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>2-5</span>
+          <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>45 min</span>
+          <span class="meta" style="color:#2E6E5B;">Familiar</span>
+        </div>
+      </div>
+      <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+
+    <div class="gcard" style="border-bottom: 1px solid #ECE7DB;">
+      <div style="width: 62px; height: 62px; border-radius: 4px; flex-shrink: 0; background: linear-gradient(150deg, #B23F52, #6E2231); border: 1px solid #E7DFCB;"></div>
+      <div style="flex-grow: 1;">
+        <div class="serif" style="font-size: 21px;">Sushi Go</div>
+        <div style="margin-top: 2px; color: #857C6A; font-size: 12px; line-height: 1.35;">Colecciona cartas de sushi por rondas.</div>
+        <div style="margin-top: 6px; display: flex; gap: 12px;">
+          <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>2-5</span>
+          <span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>15 min</span>
+          <span class="meta" style="color:#2E6E5B;">Rápido</span>
+        </div>
+      </div>
+      <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+
+    <div style="margin-top: 18px; text-align: center;"><span style="font-size: 13px; color: #315659; font-weight: 600;">Ver los 47 títulos</span></div>
+
   </div>
 
 </div>
