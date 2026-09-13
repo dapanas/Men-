@@ -9,29 +9,33 @@
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: "Manrope", "Helvetica Neue", Arial, sans-serif; }
+    body { margin: 0; font-family: "Nunito", "Helvetica Neue", Arial, sans-serif; }
     a { color: #315659; text-decoration: none; } a:hover { color: #24413f; }
     * { box-sizing: border-box; }
     .phone { width: 390px; height: 844px; background: #FBFAF6; color: #22302E; overflow: hidden; position: relative; }
     .screen { position: absolute; inset: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; }
-    .serif { font-family: "Cormorant Garamond", Georgia, serif; }
-    .eyebrow { font-size: 11px; letter-spacing: 2.4px; text-transform: uppercase; font-weight: 600; }
-    .tag { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; padding: 4px 9px; border-radius: 999px; }
-    .price { font-family: "Cormorant Garamond", Georgia, serif; font-size: 20px; color: #315659; font-weight: 600; }
+    .display { font-family: "Nunito", sans-serif; font-weight: 800; letter-spacing: -0.02em; }
+    .eyebrow { font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 800; }
+    .tag { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; letter-spacing: 0.6px; text-transform: uppercase; font-weight: 800; padding: 4px 9px; border-radius: 999px; }
+    .price { font-family: "Nunito", sans-serif; font-weight: 800; font-size: 19px; color: #315659; }
     .row-cat { display: flex; align-items: center; gap: 14px; padding: 16px 0; border-top: 1px solid #ECE7DB; cursor: pointer; }
     .item { display: flex; gap: 15px; padding: 16px 0; border-top: 1px solid #ECE7DB; cursor: pointer; }
-    .thumb { width: 64px; height: 64px; border-radius: 4px; flex-shrink: 0; border: 1px solid #E7DFCB; }
+    .thumb { width: 64px; height: 64px; border-radius: 12px; flex-shrink: 0; border: 1px solid #E7DFCB; }
     .back { width: 40px; height: 40px; border-radius: 50%; background: #FFFFFF; border: 1px solid #E7DFCB; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .iconbtn { width: 38px; height: 38px; border-radius: 50%; background: #FFFFFF; border: 1px solid #E7DFCB; display: flex; align-items: center; justify-content: center; cursor: pointer; }
     .gcard { display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #ECE7DB; cursor: pointer; }
-    .meta { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; color: #857C6A; font-weight: 500; }
+    .meta { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; color: #857C6A; font-weight: 700; }
     .stat { flex: 1; text-align: center; }
-    .stat-val { font-family: "Cormorant Garamond", Georgia, serif; font-size: 22px; color: #22302E; font-weight: 600; margin-top: 6px; }
-    .stat-lbl { font-size: 10px; letter-spacing: 0.8px; text-transform: uppercase; color: #A79F8C; margin-top: 2px; font-weight: 600; }
-    .cell { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; color: #315659; background: #FFFFFF; }
+    .stat-val { font-family: "Nunito", sans-serif; font-weight: 800; font-size: 20px; color: #22302E; margin-top: 6px; }
+    .stat-lbl { font-size: 10px; letter-spacing: 0.6px; text-transform: uppercase; color: #A79F8C; margin-top: 2px; font-weight: 700; }
+    .chip { border: 1px solid #E4DAC0; background: #FFFFFF; border-radius: 999px; padding: 9px 15px; font-size: 14px; color: #6E6656; font-weight: 700; cursor: pointer; white-space: nowrap; }
+    .chip-on { border: 1px solid #315659; background: #315659; border-radius: 999px; padding: 9px 15px; font-size: 14px; color: #F6EFE1; font-weight: 700; cursor: pointer; white-space: nowrap; }
+    .cell { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; color: #315659; background: #FFFFFF; }
     .cell-empty { background: #FBFAF6; color: #C9BFA6; }
-    .chev { }
+    .info-row { display: flex; gap: 14px; padding: 16px 0; border-top: 1px solid #ECE7DB; }
+    .info-ic { width: 40px; height: 40px; border-radius: 12px; background: #F0EBDD; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   </style>
 </helmet>
 
@@ -40,43 +44,43 @@
   <!-- ============ HOME ============ -->
   <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
   <div class="screen">
-    <div style="display: flex; align-items: center; justify-content: space-between; padding: 22px 26px 14px 26px;">
-      <div class="serif" style="font-size: 26px; font-weight: 600; color: #315659;">Gógoblu</div>
-      <div class="eyebrow" style="color: #B79448;">Carta</div>
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 22px 24px 14px 24px;">
+      <div class="display" style="font-size: 25px; color: #315659;">Gógoblu</div>
+      <div class="iconbtn" onClick="{{ goInfo }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg></div>
     </div>
-    <div style="height: 1px; background: #ECE7DB; margin: 0 26px;"></div>
+    <div style="height: 1px; background: #ECE7DB; margin: 0 24px;"></div>
 
     <!-- Seasonal -->
-    <div style="padding: 24px 26px 0 26px;">
-      <div class="eyebrow" style="color: #B79448; display: flex; align-items: center; gap: 8px;"><span style="width: 18px; height: 1px; background: #D7BC77; display: inline-block;"></span> Producto del mes</div>
-      <div onClick="{{ openLatte }}" style="margin-top: 14px; border: 1px solid #E7DFCB; border-radius: 4px; overflow: hidden; background: #FFFFFF; cursor: pointer;">
+    <div style="padding: 22px 24px 0 24px;">
+      <div class="eyebrow" style="color: #B0843C; display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 2px; background: #D7BC77; display: inline-block;"></span> Producto del mes</div>
+      <div onClick="{{ openLatte }}" style="margin-top: 14px; border: 1px solid #E7DFCB; border-radius: 16px; overflow: hidden; background: #FFFFFF; cursor: pointer;">
         <div style="height: 176px; background: linear-gradient(155deg, #35595B, #1E3A38); position: relative; display: flex; align-items: center; justify-content: center;">
           <span class="tag" style="position: absolute; top: 14px; left: 14px; background: #D7BC77; color: #2B3F2F;">✦ Temporada</span>
           <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M8 2c-.4.7-.4 1.3 0 2M12 2c-.4.7-.4 1.3 0 2"/></svg>
         </div>
         <div style="padding: 16px 18px;">
-          <div class="serif" style="font-size: 25px; line-height: 1.05;">Latte de calabaza</div>
-          <div style="margin-top: 5px; color: #857C6A; font-size: 13px;">Espresso, leche cremada y especias.</div>
+          <div class="display" style="font-size: 22px;">Latte de calabaza</div>
+          <div style="margin-top: 5px; color: #857C6A; font-size: 13px; font-weight: 600;">Espresso, leche cremada y especias.</div>
           <div style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between;">
-            <span class="price" style="font-size: 22px;">$12.000</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #315659;">Ver detalle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+            <span class="price" style="font-size: 21px;">$12.000</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; color: #315659;">Ver detalle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Novedades -->
-    <div style="padding: 26px 0 0 0;">
-      <div class="eyebrow" style="padding: 0 26px; color: #B79448; display: flex; align-items: center; gap: 8px;"><span style="width: 18px; height: 1px; background: #D7BC77; display: inline-block;"></span> Novedades</div>
-      <div style="margin-top: 14px; display: flex; gap: 14px; overflow: hidden; padding: 0 26px;">
+    <div style="padding: 24px 0 0 0;">
+      <div class="eyebrow" style="padding: 0 24px; color: #B0843C; display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 2px; background: #D7BC77; display: inline-block;"></span> Novedades</div>
+      <div style="margin-top: 14px; display: flex; gap: 14px; overflow: hidden; padding: 0 24px;">
         <div onClick="{{ openColdBrew }}" style="width: 150px; flex-shrink: 0; cursor: pointer;">
-          <div style="height: 118px; border-radius: 4px; background: linear-gradient(150deg, #C79A5B, #7A4A28); border: 1px solid #E7DFCB; position: relative;"><span class="tag" style="position: absolute; top: 10px; left: 10px; background: #315659; color: #F6EFE1;">Nuevo</span></div>
-          <div style="margin-top: 9px; font-weight: 600; font-size: 14px;">Cold brew de naranja</div>
+          <div style="height: 118px; border-radius: 14px; background: linear-gradient(150deg, #C79A5B, #7A4A28); border: 1px solid #E7DFCB; position: relative;"><span class="tag" style="position: absolute; top: 10px; left: 10px; background: #315659; color: #F6EFE1;">Nuevo</span></div>
+          <div style="margin-top: 9px; font-weight: 700; font-size: 14px;">Cold brew de naranja</div>
           <div class="price" style="margin-top: 1px;">$10.500</div>
         </div>
         <div onClick="{{ openCheesecake }}" style="width: 150px; flex-shrink: 0; cursor: pointer;">
-          <div style="height: 118px; border-radius: 4px; background: linear-gradient(150deg, #D9B98A, #9C6B3E); border: 1px solid #E7DFCB; position: relative;"><span class="tag" style="position: absolute; top: 10px; left: 10px; background: #315659; color: #F6EFE1;">Nuevo</span></div>
-          <div style="margin-top: 9px; font-weight: 600; font-size: 14px;">Cheesecake maracuyá</div>
+          <div style="height: 118px; border-radius: 14px; background: linear-gradient(150deg, #D9B98A, #9C6B3E); border: 1px solid #E7DFCB; position: relative;"><span class="tag" style="position: absolute; top: 10px; left: 10px; background: #315659; color: #F6EFE1;">Nuevo</span></div>
+          <div style="margin-top: 9px; font-weight: 700; font-size: 14px;">Cheesecake maracuyá</div>
           <div class="price" style="margin-top: 1px;">$9.500</div>
         </div>
         <div style="width: 40px; flex-shrink: 0;"></div>
@@ -84,48 +88,44 @@
     </div>
 
     <!-- Categories -->
-    <div style="padding: 30px 26px 0 26px;">
-      <div class="eyebrow" style="color: #B79448; display: flex; align-items: center; gap: 8px; margin-bottom: 4px;"><span style="width: 18px; height: 1px; background: #D7BC77; display: inline-block;"></span> Explora la carta</div>
+    <div style="padding: 28px 24px 0 24px;">
+      <div class="eyebrow" style="color: #B0843C; display: flex; align-items: center; gap: 8px; margin-bottom: 2px;"><span style="width: 16px; height: 2px; background: #D7BC77; display: inline-block;"></span> Explora la carta</div>
       <div class="row-cat" onClick="{{ goCat }}">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M8 2c-.4.7-.4 1.3 0 2M12 2c-.4.7-.4 1.3 0 2"/></svg>
-        <div style="flex-grow: 1;"><div class="serif" style="font-size: 21px;">Bebidas calientes</div></div>
-        <span style="color: #B4AC98; font-size: 12px;">6</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M8 2c-.4.7-.4 1.3 0 2M12 2c-.4.7-.4 1.3 0 2"/></svg>
+        <div style="flex-grow: 1;"><div class="display" style="font-size: 18px;">Bebidas calientes</div></div>
+        <span style="color: #B4AC98; font-size: 12px; font-weight: 700;">6</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
       </div>
       <div class="row-cat" onClick="{{ goCat }}">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16"/><path d="M5 21v-6a7 7 0 0 1 14 0v6"/><path d="M12 8V5"/></svg>
-        <div style="flex-grow: 1;"><div class="serif" style="font-size: 21px;">Productos dulces</div></div>
-        <span style="color: #B4AC98; font-size: 12px;">8</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16"/><path d="M5 21v-6a7 7 0 0 1 14 0v6"/><path d="M12 8V5"/></svg>
+        <div style="flex-grow: 1;"><div class="display" style="font-size: 18px;">Productos dulces</div></div>
+        <span style="color: #B4AC98; font-size: 12px; font-weight: 700;">8</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
       </div>
       <div class="row-cat" onClick="{{ goCat }}">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M12 15v7"/><path d="M5 3h14l-1 6a6 6 0 0 1-12 0L5 3z"/></svg>
-        <div style="flex-grow: 1;"><div class="serif" style="font-size: 21px;">Bebidas frías</div></div>
-        <span style="color: #B4AC98; font-size: 12px;">7</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M12 15v7"/><path d="M5 3h14l-1 6a6 6 0 0 1-12 0L5 3z"/></svg>
+        <div style="flex-grow: 1;"><div class="display" style="font-size: 18px;">Bebidas frías</div></div>
+        <span style="color: #B4AC98; font-size: 12px; font-weight: 700;">7</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
       </div>
     </div>
 
     <!-- Games highlight -->
-    <div style="padding: 24px 26px 0 26px;">
-      <div onClick="{{ goJuegos }}" style="border: 1px solid #E7DFCB; border-radius: 4px; overflow: hidden; cursor: pointer;">
+    <div style="padding: 24px 24px 0 24px;">
+      <div onClick="{{ goJuegos }}" style="border-radius: 16px; overflow: hidden; cursor: pointer;">
         <div style="height: 92px; background: linear-gradient(120deg, #315659, #223F3E); display: flex; align-items: center; padding: 0 20px; gap: 14px;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1" fill="#D7BC77"/><circle cx="15.5" cy="8.5" r="1" fill="#D7BC77"/><circle cx="12" cy="12" r="1" fill="#D7BC77"/><circle cx="8.5" cy="15.5" r="1" fill="#D7BC77"/><circle cx="15.5" cy="15.5" r="1" fill="#D7BC77"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1" fill="#D7BC77"/><circle cx="15.5" cy="8.5" r="1" fill="#D7BC77"/><circle cx="12" cy="12" r="1" fill="#D7BC77"/><circle cx="8.5" cy="15.5" r="1" fill="#D7BC77"/><circle cx="15.5" cy="15.5" r="1" fill="#D7BC77"/></svg>
           <div style="flex-grow: 1;">
-            <div class="serif" style="font-size: 23px; color: #F6EFE1;">Juegos de mesa</div>
-            <div style="font-size: 12px; color: #B7C4C2; margin-top: 2px;">47 títulos · 5 de la casa</div>
+            <div class="display" style="font-size: 20px; color: #F6EFE1;">Juegos de mesa</div>
+            <div style="font-size: 12px; color: #B7C4C2; margin-top: 2px; font-weight: 600;">47 títulos · gratis con tu consumo</div>
           </div>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
         </div>
       </div>
     </div>
 
-    <!-- Sudoku mini -->
-    <div style="padding: 14px 26px 30px 26px;">
-      <div onClick="{{ goSudoku }}" style="display: flex; align-items: center; justify-content: space-between; border: 1px solid #E7DFCB; border-radius: 4px; padding: 15px 18px; cursor: pointer;">
-        <div><div class="eyebrow" style="color: #B79448;">Mientras esperas</div><div style="margin-top: 4px; color: #857C6A; font-size: 13px;">Juega un Sudoku</div></div>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-      </div>
+    <div style="padding: 24px 24px 30px 24px; text-align: center;">
+      <div style="color: #B4AC98; font-size: 11px; letter-spacing: 0.5px; font-weight: 700;">GÓGOBLU · CAFÉ &amp; JUEGOS</div>
     </div>
   </div>
   </sc-if>
@@ -133,33 +133,33 @@
   <!-- ============ CATEGORIA ============ -->
   <sc-if value="{{ isCat }}" hint-placeholder-val="{{ false }}">
   <div class="screen">
-    <div style="padding: 22px 26px 12px 26px;">
+    <div style="padding: 22px 24px 12px 24px;">
       <div style="display: flex; align-items: center; gap: 12px;">
         <div class="back" onClick="{{ goHome }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22302E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
-        <div class="eyebrow" style="color: #B79448;">Carta</div>
+        <div class="eyebrow" style="color: #B0843C;">Carta</div>
       </div>
-      <div class="serif" style="margin-top: 14px; font-size: 34px; line-height: 1;">Bebidas calientes</div>
-      <div style="margin-top: 6px; color: #A79F8C; font-size: 13px;">6 productos disponibles</div>
+      <div class="display" style="margin-top: 14px; font-size: 30px;">Bebidas calientes</div>
+      <div style="margin-top: 4px; color: #A79F8C; font-size: 13px; font-weight: 600;">6 productos disponibles</div>
     </div>
-    <div style="padding: 0 26px 28px 26px;">
+    <div style="padding: 0 24px 28px 24px;">
       <div class="item" onClick="{{ openCapp }}">
         <div class="thumb" style="background: linear-gradient(150deg, #C79A5B, #7A4A28);"></div>
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div class="serif" style="font-size: 22px;">Cappuccino</div><div style="margin-top: 2px; color: #857C6A; font-size: 12.5px;">Espresso doble con leche cremada</div></div>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div class="display" style="font-size: 18px;">Cappuccino</div><div style="margin-top: 2px; color: #857C6A; font-size: 12.5px; font-weight: 600;">Espresso doble con leche cremada</div></div>
         <div class="price" style="align-self: center;">$8.500</div>
       </div>
       <div class="item" onClick="{{ openChai }}">
         <div class="thumb" style="background: linear-gradient(150deg, #8BA98F, #375B45);"></div>
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div style="display:flex; align-items:center; gap:8px;"><div class="serif" style="font-size: 22px;">Té chai</div><span class="tag" style="background:#315659; color:#F6EFE1;">Nuevo</span></div><div style="margin-top: 2px; color: #857C6A; font-size: 12.5px;">Especias, leche y un toque de miel</div></div>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div style="display:flex; align-items:center; gap:8px;"><div class="display" style="font-size: 18px;">Té chai</div><span class="tag" style="background:#315659; color:#F6EFE1;">Nuevo</span></div><div style="margin-top: 2px; color: #857C6A; font-size: 12.5px; font-weight: 600;">Especias, leche y un toque de miel</div></div>
         <div class="price" style="align-self: center;">$9.000</div>
       </div>
       <div class="item" onClick="{{ openChoco }}">
-        <div class="thumb" style="background: #F7F1E3; border: 1px dashed #D9C79A; display:flex; align-items:center; justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#BFA76B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div class="serif" style="font-size: 22px;">Chocolate caliente</div><div style="margin-top: 2px; color: #857C6A; font-size: 12.5px;">Cacao artesanal con leche</div></div>
+        <div class="thumb" style="background: #F7F1E3; border: 1px dashed #D9C79A; display:flex; align-items:center; justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#BFA76B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div class="display" style="font-size: 18px;">Chocolate caliente</div><div style="margin-top: 2px; color: #857C6A; font-size: 12.5px; font-weight: 600;">Cacao artesanal con leche</div></div>
         <div class="price" style="align-self: center;">$7.500</div>
       </div>
       <div class="item" onClick="{{ openAmericano }}" style="border-bottom: 1px solid #ECE7DB;">
         <div class="thumb" style="background: linear-gradient(150deg, #D9B98A, #9C6B3E);"></div>
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div class="serif" style="font-size: 22px;">Americano</div></div>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div class="display" style="font-size: 18px;">Americano</div></div>
         <div class="price" style="align-self: center;">$5.500</div>
       </div>
     </div>
@@ -174,24 +174,24 @@
       <sc-if value="{{ prod.showTag }}" hint-placeholder-val="{{ true }}"><span class="tag" style="position: absolute; top: 24px; right: 20px; background: #D7BC77; color: #2B3F2F;">{{ prod.tag }}</span></sc-if>
       <svg width="62" height="62" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/></svg>
     </div>
-    <div style="padding: 22px 26px 30px 26px;">
-      <div class="eyebrow" style="color: #B79448;">{{ prod.cat }}</div>
+    <div style="padding: 22px 24px 30px 24px;">
+      <div class="eyebrow" style="color: #B0843C;">{{ prod.cat }}</div>
       <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-top: 8px;">
-        <div class="serif" style="font-size: 34px; line-height: 1;">{{ prod.name }}</div>
-        <div class="serif" style="font-size: 28px; color: #315659; font-weight: 600; white-space: nowrap;">{{ prod.price }}</div>
+        <div class="display" style="font-size: 28px; line-height: 1.05;">{{ prod.name }}</div>
+        <div class="display" style="font-size: 26px; color: #315659; white-space: nowrap;">{{ prod.price }}</div>
       </div>
-      <p style="margin-top: 14px; color: #6E6656; font-size: 14.5px; line-height: 1.6;">{{ prod.desc }}</p>
+      <p style="margin-top: 12px; color: #6E6656; font-size: 14.5px; line-height: 1.6; font-weight: 500;">{{ prod.desc }}</p>
       <sc-if value="{{ prod.showNote }}" hint-placeholder-val="{{ true }}">
-      <div style="margin-top: 20px; display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #E7DFCB; border-left: 3px solid #D7BC77; border-radius: 4px; padding: 14px 16px;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <div style="font-size: 13px; color: #6E6656; line-height: 1.4;">{{ prod.note }}</div>
+      <div style="margin-top: 18px; display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #E7DFCB; border-left: 4px solid #D7BC77; border-radius: 12px; padding: 14px 16px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div style="font-size: 13px; color: #6E6656; line-height: 1.4; font-weight: 600;">{{ prod.note }}</div>
       </div>
       </sc-if>
       <div style="margin-top: 24px;">
-        <div class="eyebrow" style="color: #B79448; display: flex; align-items: center; gap: 8px; margin-bottom: 4px;"><span style="width: 18px; height: 1px; background: #D7BC77; display: inline-block;"></span> Adiciones sugeridas</div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-top: 1px solid #ECE7DB;"><span style="font-size: 14px; color: #3A362C;">Shot extra de espresso</span><span class="serif" style="font-size: 18px; color: #315659; font-weight: 600;">+$2.000</span></div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-top: 1px solid #ECE7DB;"><span style="font-size: 14px; color: #3A362C;">Leche de almendras</span><span class="serif" style="font-size: 18px; color: #315659; font-weight: 600;">+$1.500</span></div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-top: 1px solid #ECE7DB; border-bottom: 1px solid #ECE7DB;"><span style="font-size: 14px; color: #3A362C;">Crema batida</span><span class="serif" style="font-size: 18px; color: #315659; font-weight: 600;">+$1.000</span></div>
+        <div class="eyebrow" style="color: #B0843C; display: flex; align-items: center; gap: 8px; margin-bottom: 4px;"><span style="width: 16px; height: 2px; background: #D7BC77; display: inline-block;"></span> Adiciones sugeridas</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-top: 1px solid #ECE7DB;"><span style="font-size: 14px; color: #3A362C; font-weight: 600;">Shot extra de espresso</span><span class="price" style="font-size: 17px;">+$2.000</span></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-top: 1px solid #ECE7DB;"><span style="font-size: 14px; color: #3A362C; font-weight: 600;">Leche de almendras</span><span class="price" style="font-size: 17px;">+$1.500</span></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-top: 1px solid #ECE7DB; border-bottom: 1px solid #ECE7DB;"><span style="font-size: 14px; color: #3A362C; font-weight: 600;">Crema batida</span><span class="price" style="font-size: 17px;">+$1.000</span></div>
       </div>
     </div>
   </div>
@@ -200,36 +200,107 @@
   <!-- ============ JUEGOS ============ -->
   <sc-if value="{{ isJuegos }}" hint-placeholder-val="{{ false }}">
   <div class="screen">
-    <div style="padding: 22px 26px 12px 26px;">
+    <div style="padding: 22px 24px 12px 24px;">
       <div style="display: flex; align-items: center; gap: 12px;">
         <div class="back" onClick="{{ goHome }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22302E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
-        <div class="eyebrow" style="color: #B79448;">Carta · Juegos</div>
+        <div class="eyebrow" style="color: #B0843C;">Carta · Juegos</div>
       </div>
-      <div class="serif" style="margin-top: 14px; font-size: 34px; line-height: 1;">Juegos de mesa</div>
-      <div style="margin-top: 6px; color: #A79F8C; font-size: 13px;">47 títulos · gratis con tu consumo</div>
+      <div class="display" style="margin-top: 14px; font-size: 30px;">Juegos de mesa</div>
+      <div style="margin-top: 4px; color: #A79F8C; font-size: 13px; font-weight: 600;">47 títulos · gratis con tu consumo</div>
     </div>
-    <div style="display: flex; gap: 8px; overflow: hidden; padding: 0 26px 6px 26px;">
-      <span style="background: #315659; color: #F6EFE1; border-radius: 999px; padding: 7px 14px; font-size: 12.5px; font-weight: 600; white-space: nowrap;">Todos</span>
-      <span style="border: 1px solid #E4DAC0; border-radius: 999px; padding: 7px 14px; font-size: 12.5px; color: #6E6656; font-weight: 600; white-space: nowrap;">De la casa</span>
-      <span style="border: 1px solid #E4DAC0; border-radius: 999px; padding: 7px 14px; font-size: 12.5px; color: #6E6656; font-weight: 600; white-space: nowrap;">Estrategia</span>
-      <span style="border: 1px solid #E4DAC0; border-radius: 999px; padding: 7px 14px; font-size: 12.5px; color: #6E6656; font-weight: 600; white-space: nowrap;">Rápidos</span>
+
+    <!-- Recommender CTA -->
+    <div style="padding: 6px 24px 0 24px;">
+      <div onClick="{{ goRec }}" style="display: flex; align-items: center; gap: 14px; background: linear-gradient(120deg, #315659, #223F3E); border-radius: 16px; padding: 16px 18px; cursor: pointer;">
+        <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(215,188,119,0.22); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.66 3.5a8.5 8.5 0 1 0 10.84 10.84 6.5 6.5 0 0 1-10.84-10.84z" transform="translate(1 1) scale(0.0)"/><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div style="flex-grow: 1;"><div class="display" style="font-size: 17px; color: #F6EFE1;">¿Para su mesa?</div><div style="font-size: 12px; color: #B7C4C2; margin-top: 2px; font-weight: 600;">Te recomendamos según cuántos son y su tiempo</div></div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
     </div>
-    <div style="padding: 16px 26px 30px 26px;">
-      <div class="gcard" style="border-top: none;" onClick="{{ openCatan }}">
-        <div style="width: 62px; height: 62px; border-radius: 4px; flex-shrink: 0; background: linear-gradient(150deg, #B5762F, #7A4A1E); border: 1px solid #E7DFCB;"></div>
-        <div style="flex-grow: 1;"><div class="serif" style="font-size: 21px;">Catán</div><div style="margin-top: 2px; color: #857C6A; font-size: 12px;">Comercia, construye y coloniza la isla.</div><div style="margin-top: 6px; display: flex; gap: 12px;"><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>3-4</span><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>60 min</span><span class="meta" style="color:#2E6E5B;">Estrategia</span></div></div>
-        <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+
+    <!-- De la casa -->
+    <div style="padding: 22px 24px 0 24px;">
+      <div class="eyebrow" style="color: #B0843C; display: flex; align-items: center; gap: 8px; margin-bottom: 4px;"><span style="width: 16px; height: 2px; background: #D7BC77; display: inline-block;"></span> Creados en la casa</div>
+    </div>
+    <div style="padding: 4px 24px 30px 24px;">
+      <sc-for list="{{ featured }}" as="g" hint-placeholder-count="3">
+        <div class="gcard" onClick="{{ g.open }}">
+          <div style="width: 62px; height: 62px; border-radius: 12px; flex-shrink: 0; border: 1px solid #E7DFCB; background: {{ g.grad }};"></div>
+          <div style="flex-grow: 1;">
+            <div style="display:flex; align-items:center; gap:8px;"><div class="display" style="font-size: 18px;">{{ g.name }}</div><span class="tag" style="background:#EFE7D3; color:#8A6A2E;">Casa</span></div>
+            <div style="margin-top: 2px; color: #857C6A; font-size: 12px; font-weight: 500;">{{ g.desc }}</div>
+            <div style="margin-top: 6px; display: flex; gap: 12px;"><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>{{ g.players }}</span><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{{ g.timeLabel }}</span></div>
+          </div>
+          <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </div>
+      </sc-for>
+
+      <div class="eyebrow" style="color: #A79F8C; margin: 18px 0 2px 0;">Populares</div>
+      <sc-for list="{{ popular }}" as="g" hint-placeholder-count="4">
+        <div class="gcard" onClick="{{ g.open }}">
+          <div style="width: 62px; height: 62px; border-radius: 12px; flex-shrink: 0; border: 1px solid #E7DFCB; background: {{ g.grad }};"></div>
+          <div style="flex-grow: 1;">
+            <div class="display" style="font-size: 18px;">{{ g.name }}</div>
+            <div style="margin-top: 2px; color: #857C6A; font-size: 12px; font-weight: 500;">{{ g.desc }}</div>
+            <div style="margin-top: 6px; display: flex; gap: 12px;"><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>{{ g.players }}</span><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{{ g.timeLabel }}</span><span class="meta" style="color:#2E6E5B;">{{ g.cat }}</span></div>
+          </div>
+          <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ============ RECOMENDADOR ============ -->
+  <sc-if value="{{ isRec }}" hint-placeholder-val="{{ false }}">
+  <div class="screen">
+    <div style="padding: 22px 24px 8px 24px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="back" onClick="{{ goJuegos }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22302E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+        <div class="eyebrow" style="color: #B0843C;">Juegos</div>
       </div>
-      <div class="gcard" onClick="{{ openAzul }}">
-        <div style="width: 62px; height: 62px; border-radius: 4px; flex-shrink: 0; background: linear-gradient(150deg, #4E7C8B, #2C4A55); border: 1px solid #E7DFCB;"></div>
-        <div style="flex-grow: 1;"><div class="serif" style="font-size: 21px;">Azul</div><div style="margin-top: 2px; color: #857C6A; font-size: 12px;">Compón mosaicos de azulejos coloridos.</div><div style="margin-top: 6px; display: flex; gap: 12px;"><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>2-4</span><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>35 min</span><span class="meta" style="color:#2E6E5B;">Abstracto</span></div></div>
-        <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      <div class="display" style="margin-top: 14px; font-size: 30px;">¿Para su mesa?</div>
+      <div style="margin-top: 4px; color: #A79F8C; font-size: 13px; font-weight: 600;">Elige y te decimos qué jugar</div>
+    </div>
+
+    <div style="padding: 16px 24px 0 24px;">
+      <div style="font-size: 12.5px; font-weight: 800; color: #6E6656; margin-bottom: 10px;">¿Cuántos son?</div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <span class="{{ pClass2 }}" onClick="{{ setP2 }}">2</span>
+        <span class="{{ pClass3 }}" onClick="{{ setP3 }}">3</span>
+        <span class="{{ pClass4 }}" onClick="{{ setP4 }}">4</span>
+        <span class="{{ pClass5 }}" onClick="{{ setP5 }}">5</span>
+        <span class="{{ pClass6 }}" onClick="{{ setP6 }}">6+</span>
       </div>
-      <div class="gcard" onClick="{{ openUno }}" style="border-bottom: 1px solid #ECE7DB;">
-        <div style="width: 62px; height: 62px; border-radius: 4px; flex-shrink: 0; background: linear-gradient(150deg, #C0562F, #7C3016); border: 1px solid #E7DFCB;"></div>
-        <div style="flex-grow: 1;"><div class="serif" style="font-size: 21px;">Uno</div><div style="margin-top: 2px; color: #857C6A; font-size: 12px;">El clásico de cartas rápido y caótico.</div><div style="margin-top: 6px; display: flex; gap: 12px;"><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>2-10</span><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B79448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>15 min</span><span class="meta" style="color:#2E6E5B;">Familiar</span></div></div>
-        <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      <div style="font-size: 12.5px; font-weight: 800; color: #6E6656; margin: 18px 0 10px 0;">¿Cuánto tiempo tienen?</div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <span class="{{ tClassS }}" onClick="{{ setTS }}">Rápido · ≤20 min</span>
+        <span class="{{ tClassM }}" onClick="{{ setTM }}">Medio · 20–45</span>
+        <span class="{{ tClassL }}" onClick="{{ setTL }}">Largo · 45+</span>
       </div>
+    </div>
+
+    <div style="padding: 22px 24px 30px 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+        <div class="eyebrow" style="color: #B0843C;">{{ recCount }} para ustedes</div>
+        <span onClick="{{ clearRec }}" style="font-size: 12px; font-weight: 700; color: #A79F8C; cursor: pointer;">Limpiar</span>
+      </div>
+      <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ true }}">
+      <sc-for list="{{ results }}" as="g" hint-placeholder-count="4">
+        <div class="gcard" onClick="{{ g.open }}">
+          <div style="width: 62px; height: 62px; border-radius: 12px; flex-shrink: 0; border: 1px solid #E7DFCB; background: {{ g.grad }};"></div>
+          <div style="flex-grow: 1;">
+            <div class="display" style="font-size: 18px;">{{ g.name }}</div>
+            <div style="margin-top: 2px; color: #857C6A; font-size: 12px; font-weight: 500;">{{ g.desc }}</div>
+            <div style="margin-top: 6px; display: flex; gap: 12px;"><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>{{ g.players }}</span><span class="meta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{{ g.timeLabel }}</span><span class="meta" style="color:#2E6E5B;">{{ g.cat }}</span></div>
+          </div>
+          <svg style="align-self:center;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3BBA6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </div>
+      </sc-for>
+      </sc-if>
+      <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center; padding: 30px 10px; color:#A79F8C; font-size:13px; font-weight:600;">No hay juegos con esa combinación.<br>Prueba con otro tiempo o número de jugadores.</div>
+      </sc-if>
     </div>
   </div>
   </sc-if>
@@ -238,25 +309,25 @@
   <sc-if value="{{ isJuego }}" hint-placeholder-val="{{ false }}">
   <div class="screen">
     <div style="height: 250px; position: relative; display: flex; align-items: center; justify-content: center; background: {{ juego.grad }};">
-      <div class="back" onClick="{{ goJuegos }}" style="position: absolute; top: 20px; left: 20px; background: rgba(251,250,246,0.92);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22302E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+      <div class="back" onClick="{{ backFromJuego }}" style="position: absolute; top: 20px; left: 20px; background: rgba(251,250,246,0.92);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22302E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
       <svg width="66" height="66" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1" fill="rgba(255,255,255,0.85)"/><circle cx="15.5" cy="8.5" r="1" fill="rgba(255,255,255,0.85)"/><circle cx="12" cy="12" r="1" fill="rgba(255,255,255,0.85)"/></svg>
     </div>
-    <div style="padding: 22px 26px 30px 26px;">
-      <div class="eyebrow" style="color: #B79448;">Juego · {{ juego.cat }}</div>
-      <div class="serif" style="margin-top: 8px; font-size: 36px; line-height: 1;">{{ juego.name }}</div>
-      <div style="margin-top: 20px; display: flex; background: #FFFFFF; border: 1px solid #E7DFCB; border-radius: 4px; padding: 14px 6px;">
-        <div class="stat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><div class="stat-val">{{ juego.players }}</div><div class="stat-lbl">Jugadores</div></div>
+    <div style="padding: 22px 24px 30px 24px;">
+      <div class="eyebrow" style="color: #B0843C;">Juego · {{ juego.cat }}</div>
+      <div class="display" style="margin-top: 8px; font-size: 32px;">{{ juego.name }}</div>
+      <div style="margin-top: 18px; display: flex; background: #FFFFFF; border: 1px solid #E7DFCB; border-radius: 14px; padding: 14px 6px;">
+        <div class="stat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><div class="stat-val">{{ juego.players }}</div><div class="stat-lbl">Jugadores</div></div>
         <div style="width: 1px; background: #ECE7DB;"></div>
-        <div class="stat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="stat-val">{{ juego.time }}</div><div class="stat-lbl">Duración</div></div>
+        <div class="stat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="stat-val">{{ juego.timeLabel }}</div><div class="stat-lbl">Duración</div></div>
         <div style="width: 1px; background: #ECE7DB;"></div>
-        <div class="stat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/></svg><div class="stat-val">{{ juego.age }}</div><div class="stat-lbl">Edad</div></div>
+        <div class="stat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/></svg><div class="stat-val">{{ juego.age }}</div><div class="stat-lbl">Edad</div></div>
         <div style="width: 1px; background: #ECE7DB;"></div>
-        <div class="stat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V10M9 20V4M15 20v-7M21 20v-4"/></svg><div class="stat-val">{{ juego.diff }}</div><div class="stat-lbl">Dificultad</div></div>
+        <div class="stat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V10M9 20V4M15 20v-7M21 20v-4"/></svg><div class="stat-val">{{ juego.diff }}</div><div class="stat-lbl">Nivel</div></div>
       </div>
-      <p style="margin-top: 20px; color: #6E6656; font-size: 14.5px; line-height: 1.6;">{{ juego.desc }}</p>
-      <div style="margin-top: 24px; display: flex; align-items: center; gap: 12px; background: linear-gradient(120deg, #315659, #223F3E); border-radius: 4px; padding: 16px 18px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/></svg>
-        <div style="flex-grow: 1;"><div style="font-size: 14px; font-weight: 700; color: #F6EFE1;">Pídelo en la barra</div><div style="font-size: 12px; color: #B7C4C2; margin-top: 2px;">Gratis con tu consumo. Te lo llevamos a la mesa.</div></div>
+      <p style="margin-top: 18px; color: #6E6656; font-size: 14.5px; line-height: 1.6; font-weight: 500;">{{ juego.desc }}</p>
+      <div style="margin-top: 22px; display: flex; align-items: center; gap: 12px; background: linear-gradient(120deg, #315659, #223F3E); border-radius: 14px; padding: 16px 18px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D7BC77" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/></svg>
+        <div style="flex-grow: 1;"><div style="font-size: 14px; font-weight: 800; color: #F6EFE1;">Pídelo en tu mesa</div><div style="font-size: 12px; color: #B7C4C2; margin-top: 2px; font-weight: 600;">Gratis con tu consumo. Te lo llevamos.</div></div>
       </div>
     </div>
   </div>
@@ -265,15 +336,15 @@
   <!-- ============ SUDOKU ============ -->
   <sc-if value="{{ isSudoku }}" hint-placeholder-val="{{ false }}">
   <div class="screen">
-    <div style="padding: 22px 26px 14px 26px;">
+    <div style="padding: 22px 24px 14px 24px;">
       <div style="display: flex; align-items: center; gap: 12px;">
-        <div class="back" onClick="{{ goHome }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22302E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
-        <div class="eyebrow" style="color: #B79448;">Mientras esperas</div>
+        <div class="back" onClick="{{ goInfo }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22302E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+        <div class="eyebrow" style="color: #B0843C;">Mientras esperas</div>
       </div>
-      <div class="serif" style="margin-top: 14px; font-size: 34px; line-height: 1;">Sudoku</div>
+      <div class="display" style="margin-top: 14px; font-size: 30px;">Sudoku</div>
     </div>
-    <div style="padding: 14px 26px 30px 26px;">
-      <div style="border: 2px solid #315659; border-radius: 4px; width: fit-content; margin: 0 auto; overflow: hidden;">
+    <div style="padding: 14px 24px 30px 24px;">
+      <div style="border: 2px solid #315659; border-radius: 6px; width: fit-content; margin: 0 auto; overflow: hidden;">
         <div style="display: grid; grid-template-columns: repeat(9, 30px); grid-template-rows: repeat(9, 30px); gap: 1px; background: #DED4BC;">
           <div class="cell">5</div><div class="cell">3</div><div class="cell cell-empty"></div><div class="cell cell-empty" style="border-left:2px solid #315659;"></div><div class="cell">7</div><div class="cell cell-empty"></div><div class="cell cell-empty" style="border-left:2px solid #315659;"></div><div class="cell cell-empty"></div><div class="cell cell-empty"></div>
           <div class="cell">6</div><div class="cell cell-empty"></div><div class="cell cell-empty"></div><div class="cell" style="border-left:2px solid #315659;">1</div><div class="cell">9</div><div class="cell">5</div><div class="cell cell-empty" style="border-left:2px solid #315659;"></div><div class="cell cell-empty"></div><div class="cell cell-empty"></div>
@@ -287,8 +358,68 @@
         </div>
       </div>
       <div style="display: flex; gap: 10px; margin-top: 22px;">
-        <button style="flex-grow: 1; background: #315659; color: #F6EFE1; border: none; border-radius: 4px; padding: 14px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer;">Comprobar</button>
-        <button style="background: transparent; color: #315659; border: 1px solid #315659; border-radius: 4px; padding: 14px 20px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer;">Nuevo</button>
+        <button style="flex-grow: 1; background: #315659; color: #F6EFE1; border: none; border-radius: 12px; padding: 14px; font-size: 14px; font-weight: 800; font-family: inherit; cursor: pointer;">Comprobar</button>
+        <button style="background: transparent; color: #315659; border: 1px solid #315659; border-radius: 12px; padding: 14px 20px; font-size: 14px; font-weight: 800; font-family: inherit; cursor: pointer;">Nuevo</button>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ============ INFO ============ -->
+  <sc-if value="{{ isInfo }}" hint-placeholder-val="{{ false }}">
+  <div class="screen">
+    <div style="padding: 22px 24px 12px 24px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="back" onClick="{{ goHome }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22302E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+        <div class="eyebrow" style="color: #B0843C;">Gógoblu</div>
+      </div>
+      <div class="display" style="margin-top: 14px; font-size: 30px;">Info del café</div>
+    </div>
+
+    <div style="padding: 6px 24px 0 24px;">
+      <div class="info-row" style="border-top: none;">
+        <div class="info-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="M12 20h.01"/></svg></div>
+        <div><div style="font-weight: 800; font-size: 15px;">WiFi</div><div style="color: #857C6A; font-size: 13px; margin-top: 2px; font-weight: 600;">Red: Gógoblu · Clave: [su-clave]</div></div>
+      </div>
+      <div class="info-row">
+        <div class="info-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><div style="font-weight: 800; font-size: 15px;">Horario</div><div style="color: #857C6A; font-size: 13px; margin-top: 2px; font-weight: 600;">[Lun–Jue 3–10pm · Vie–Dom 2–11pm]</div></div>
+      </div>
+      <div class="info-row">
+        <div class="info-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div style="flex-grow:1;"><div style="font-weight: 800; font-size: 15px;">Ubicación</div><div style="color: #857C6A; font-size: 13px; margin-top: 2px; font-weight: 600;">[Dirección del café]</div></div>
+        <span style="align-self:center; font-size: 12px; font-weight: 800; color: #315659;">Ver mapa</span>
+      </div>
+      <div class="info-row">
+        <div class="info-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg></div>
+        <div style="flex-grow:1;"><div style="font-weight: 800; font-size: 15px;">Instagram</div><div style="color: #857C6A; font-size: 13px; margin-top: 2px; font-weight: 600;">@[usuario]</div></div>
+        <span style="align-self:center; font-size: 12px; font-weight: 800; color: #315659;">Seguir</span>
+      </div>
+    </div>
+
+    <!-- Cómo funciona -->
+    <div style="padding: 20px 24px 0 24px;">
+      <div style="background: #FFFFFF; border: 1px solid #E7DFCB; border-radius: 14px; padding: 16px 18px;">
+        <div style="display:flex; align-items:center; gap:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1" fill="#B0843C"/><circle cx="15.5" cy="15.5" r="1" fill="#B0843C"/><circle cx="12" cy="12" r="1" fill="#B0843C"/></svg><div style="font-weight: 800; font-size: 15px;">¿Cómo funciona?</div></div>
+        <div style="margin-top: 8px; color: #6E6656; font-size: 13.5px; line-height: 1.55; font-weight: 500;">Los juegos son <strong style="color:#22302E;">gratis con tu consumo</strong>. Pídelos en tu mesa y te los llevamos. Cuídalos como tuyos 💛</div>
+      </div>
+    </div>
+
+    <!-- Sudoku entry -->
+    <div style="padding: 12px 24px 0 24px;">
+      <div onClick="{{ goSudoku }}" style="display: flex; align-items: center; justify-content: space-between; border: 1px solid #E7DFCB; border-radius: 14px; padding: 15px 18px; cursor: pointer;">
+        <div style="font-weight: 700; font-size: 14px; color: #3A362C;">¿Un Sudoku mientras esperas? 🧮</div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <!-- Review nudge -->
+    <div style="padding: 20px 24px 30px 24px;">
+      <div style="background: linear-gradient(120deg, #315659, #223F3E); border-radius: 16px; padding: 20px; text-align: center;">
+        <div style="font-size: 22px;">⭐️⭐️⭐️⭐️⭐️</div>
+        <div class="display" style="font-size: 19px; color: #F6EFE1; margin-top: 8px;">¿La estás pasando bien?</div>
+        <div style="color: #B7C4C2; font-size: 13px; margin-top: 4px; font-weight: 600;">Cuéntanos con una reseña, nos ayuda un montón.</div>
+        <div style="margin-top: 14px; display: inline-block; background: #D7BC77; color: #2B3F2F; font-weight: 800; font-size: 14px; padding: 12px 22px; border-radius: 12px; cursor: pointer;">Dejar reseña en Google</div>
       </div>
     </div>
   </div>
@@ -303,35 +434,82 @@ class Component extends DCLogic {
     const screen = s.screen || 'home';
     const nav = (to, extra) => () => this.setState(Object.assign({ screen: to }, extra || {}));
 
+    // ---- Café products (sample until real CSV) ----
     const P = {
-      latte: { cat: 'Bebidas calientes', name: 'Latte de calabaza', price: '$12.000', grad: 'linear-gradient(160deg,#35595B,#1C3634)', desc: 'Espresso de origen con leche cremada, puré de calabaza asada y una mezcla de especias: canela, nuez moscada y jengibre. Terminado con un toque de crema y caramelo especiado.', showTag: true, tag: '✦ Temporada', showNote: true, note: 'Disponible solo en octubre. Edición de temporada.' },
-      capp: { cat: 'Bebidas calientes', name: 'Cappuccino', price: '$8.500', grad: 'linear-gradient(160deg,#C79A5B,#6E4522)', desc: 'Espresso doble coronado con leche cremada y una fina capa de espuma. El equilibrio perfecto entre intensidad y suavidad.', showTag: false, tag: '', showNote: false, note: '' },
+      latte: { cat: 'Bebidas calientes', name: 'Latte de calabaza', price: '$12.000', grad: 'linear-gradient(160deg,#35595B,#1C3634)', desc: 'Espresso de origen con leche cremada, puré de calabaza asada y especias: canela, nuez moscada y jengibre. Con un toque de crema y caramelo especiado.', showTag: true, tag: '✦ Temporada', showNote: true, note: 'Disponible solo en octubre. Edición de temporada.' },
+      capp: { cat: 'Bebidas calientes', name: 'Cappuccino', price: '$8.500', grad: 'linear-gradient(160deg,#C79A5B,#6E4522)', desc: 'Espresso doble coronado con leche sedosa y una espuma tibia que aguanta hasta el último sorbo.', showTag: false, tag: '', showNote: false, note: '' },
       chai: { cat: 'Bebidas calientes', name: 'Té chai', price: '$9.000', grad: 'linear-gradient(160deg,#8BA98F,#375B45)', desc: 'Mezcla de especias, leche vaporizada y un toque de miel. Reconfortante y aromático.', showTag: true, tag: 'Nuevo', showNote: false, note: '' },
-      choco: { cat: 'Bebidas calientes', name: 'Chocolate caliente', price: '$7.500', grad: 'linear-gradient(160deg,#6E4522,#3E2413)', desc: 'Cacao artesanal fundido con leche. Cremoso, intenso y clásico.', showTag: false, tag: '', showNote: false, note: '' },
-      americano: { cat: 'Bebidas calientes', name: 'Americano', price: '$5.500', grad: 'linear-gradient(160deg,#D9B98A,#9C6B3E)', desc: 'Espresso alargado con agua caliente. Ligero y para acompañar cualquier momento.', showTag: false, tag: '', showNote: false, note: '' },
-      coldbrew: { cat: 'Bebidas frías', name: 'Cold brew de naranja', price: '$10.500', grad: 'linear-gradient(160deg,#C79A5B,#7A4A28)', desc: 'Café de extracción en frío por 18 horas con un toque cítrico de naranja. Suave, refrescante y con poca acidez.', showTag: true, tag: 'Nuevo', showNote: false, note: '' },
-      cheesecake: { cat: 'Productos dulces', name: 'Cheesecake de maracuyá', price: '$9.500', grad: 'linear-gradient(160deg,#D9B98A,#9C6B3E)', desc: 'Base de galleta, relleno cremoso de queso y cubierta de maracuyá natural. El equilibrio justo entre dulce y ácido.', showTag: true, tag: 'Nuevo', showNote: false, note: '' }
+      choco: { cat: 'Bebidas calientes', name: 'Chocolate caliente', price: '$7.500', grad: 'linear-gradient(160deg,#6E4522,#3E2413)', desc: 'Chocolate fundido lentamente en leche cremosa, espeso y reconfortante, con un final apenas amargo.', showTag: false, tag: '', showNote: false, note: '' },
+      americano: { cat: 'Bebidas calientes', name: 'Americano', price: '$5.500', grad: 'linear-gradient(160deg,#D9B98A,#9C6B3E)', desc: 'Espresso alargado con agua caliente. Ligero, para acompañar cualquier momento.', showTag: false, tag: '', showNote: false, note: '' },
+      coldbrew: { cat: 'Bebidas frías', name: 'Cold brew de naranja', price: '$10.500', grad: 'linear-gradient(160deg,#C79A5B,#7A4A28)', desc: 'Extraído en frío durante 18 horas con un toque cítrico de naranja. Suave, refrescante y con poca acidez.', showTag: true, tag: 'Nuevo', showNote: false, note: '' },
+      cheesecake: { cat: 'Productos dulces', name: 'Cheesecake de maracuyá', price: '$9.500', grad: 'linear-gradient(160deg,#D9B98A,#9C6B3E)', desc: 'Base de galleta artesanal y relleno cremoso, rematado con maracuyá recién hecho que corta el dulce con acidez brillante.', showTag: true, tag: 'Nuevo', showNote: false, note: '' }
     };
 
-    const G = {
-      catan: { cat: 'Estrategia', name: 'Catán', players: '3–4', time: "60'", age: '10+', diff: 'Media', grad: 'linear-gradient(160deg,#35595B,#1C3634)', desc: 'Coloniza la isla de Catán construyendo caminos, aldeas y ciudades. Cada turno se recolectan y comercian recursos para expandirse. El primero en llegar a 10 puntos de victoria gana. Un clásico moderno, fácil de aprender y distinto en cada partida.' },
-      azul: { cat: 'Abstracto', name: 'Azul', players: '2–4', time: "35'", age: '8+', diff: 'Media', grad: 'linear-gradient(160deg,#4E7C8B,#2C4A55)', desc: 'Como artesano azulejero, tomas fichas de colores para completar patrones en tu tablero. Elegante, táctil y muy fácil de enseñar, con decisiones que se sienten en cada turno.' },
-      uno: { cat: 'Familiar', name: 'Uno', players: '2–10', time: "15'", age: '7+', diff: 'Baja', grad: 'linear-gradient(160deg,#C0562F,#7C3016)', desc: 'El clásico de cartas: empareja colores y números, usa cartas de acción y no olvides gritar ¡Uno! cuando te quede una sola carta. Rápido, caótico y para todas las edades.' }
-    };
+    // ---- Board games (real list) ----
+    const mk = (o) => Object.assign({
+      bucket: o.mins <= 20 ? 'corto' : (o.mins <= 45 ? 'medio' : 'largo'),
+      players: o.min + '–' + o.max,
+      timeLabel: o.mins + ' min'
+    }, o);
+
+    const GAMES = [
+      mk({ id: 'catan', name: 'Catán', min: 3, max: 4, mins: 60, cat: 'Estrategia', age: '10+', diff: 'Media', grad: 'linear-gradient(150deg,#B5762F,#7A4A1E)', desc: 'Comercia, construye y coloniza la isla. Un clásico moderno, distinto en cada partida.' }),
+      mk({ id: 'azul', name: 'Azul', min: 2, max: 4, mins: 35, cat: 'Abstracto', age: '8+', diff: 'Media', grad: 'linear-gradient(150deg,#4E7C8B,#2C4A55)', desc: 'Compón mosaicos de azulejos coloridos. Elegante y muy fácil de enseñar.' }),
+      mk({ id: 'carcassonne', name: 'Carcassonne', min: 2, max: 5, mins: 40, cat: 'Estrategia', age: '8+', diff: 'Media', grad: 'linear-gradient(150deg,#8A9A3E,#4E5A22)', desc: 'Construye un paisaje medieval loseta a loseta. Fácil de aprender, difícil de soltar.' }),
+      mk({ id: 'ticket', name: 'Ticket to Ride', min: 2, max: 5, mins: 45, cat: 'Familiar', age: '8+', diff: 'Baja', grad: 'linear-gradient(150deg,#7C4A9C,#4A2A66)', desc: 'Conecta ciudades con rutas de tren. Estrategia amable para todos.' }),
+      mk({ id: 'uno', name: 'Uno', min: 2, max: 10, mins: 15, cat: 'Familiar', age: '7+', diff: 'Baja', grad: 'linear-gradient(150deg,#C0562F,#7C3016)', desc: 'El clásico de cartas rápido y caótico. ¡No olvides gritar Uno!' }),
+      mk({ id: 'sushi', name: 'Sushi Go', min: 2, max: 5, mins: 15, cat: 'Rápido', age: '8+', diff: 'Baja', grad: 'linear-gradient(150deg,#B23F52,#6E2231)', desc: 'Pasa y elige cartas de sushi para armar el mejor combo. Dulce y rápido.' }),
+      mk({ id: 'themind', name: 'The Mind', min: 2, max: 4, mins: 20, cat: 'Cooperativo', age: '8+', diff: 'Media', grad: 'linear-gradient(150deg,#3A6E8F,#1F3D55)', desc: 'Sin hablar ni hacer señas, jueguen sus cartas en orden. Pura conexión.' }),
+      mk({ id: 'virus', name: 'Virus!', min: 2, max: 6, mins: 20, cat: 'Fiesta', age: '8+', diff: 'Baja', grad: 'linear-gradient(150deg,#4E9C6B,#2A6E42)', desc: 'Arma tu cuerpo sano mientras contagias a los demás. Perfecto para romper el hielo.' }),
+      mk({ id: 'gatitos', name: 'Gatitos Explosivos', min: 2, max: 5, mins: 15, cat: 'Fiesta', age: '7+', diff: 'Baja', grad: 'linear-gradient(150deg,#C05A8F,#6E2A52)', desc: 'Ruleta rusa con gatitos: saca cartas sin destapar la bomba. Caótico y divertidísimo.' }),
+      mk({ id: 'kingdomino', name: 'King Domino', min: 2, max: 4, mins: 20, cat: 'Familiar', age: '8+', diff: 'Baja', grad: 'linear-gradient(150deg,#5A8A9C,#33566A)', desc: 'Une dominós para expandir tu reino. Sencillo, rápido y muy rejugable.' }),
+      mk({ id: 'cockroach', name: 'Cockroach Poker', min: 2, max: 6, mins: 20, cat: 'Fiesta', age: '8+', diff: 'Baja', grad: 'linear-gradient(150deg,#8A6A3E,#4E3A1E)', desc: 'Un juego de mentiras y faroleo. Adivina si te están engañando… o no.' }),
+      mk({ id: 'risk', name: 'Risk', min: 2, max: 6, mins: 120, cat: 'Estrategia', age: '12+', diff: 'Alta', grad: 'linear-gradient(150deg,#8A3A3A,#4E1E1E)', desc: 'Conquista el mundo territorio a territorio. Para una tarde larga y épica.' }),
+      mk({ id: 'jenga', name: 'Jenga', min: 1, max: 8, mins: 15, cat: 'Destreza', age: '6+', diff: 'Baja', grad: 'linear-gradient(150deg,#B58A4E,#7A5A2A)', desc: 'Saca y apila bloques sin que la torre caiga. Tensión pura hasta el final.' }),
+      mk({ id: 'scrabble', name: 'Scrabble', min: 2, max: 4, mins: 60, cat: 'Palabras', age: '10+', diff: 'Media', grad: 'linear-gradient(150deg,#3E7A6E,#1F4A42)', desc: 'Forma palabras y suma puntos con las letras. Un clásico para lucirse.' })
+    ];
+
+    const byId = {};
+    GAMES.forEach(g => { byId[g.id] = g; });
+    const openGame = (g) => nav('juego', { juego: g, juegoFrom: screen });
+    const deco = (g) => Object.assign({}, g, { open: openGame(g) });
+
+    // house-made games (kept from the real "de la casa" list, shown as cards)
+    const HOUSE = [
+      mk({ id: 'morc', name: 'Mor-c', min: 2, max: 5, mins: 30, cat: 'Casa', age: '10+', diff: 'Media', grad: 'linear-gradient(150deg,#35595B,#1E3A38)', desc: 'Creado en Gógoblu. Pídelo y descúbrelo.' }),
+      mk({ id: 'creactiva', name: 'Creactiva', min: 3, max: 8, mins: 20, cat: 'Casa', age: '8+', diff: 'Baja', grad: 'linear-gradient(150deg,#6E4522,#3E2413)', desc: 'Creado en Gógoblu. Ingenio y creatividad en grupo.' })
+    ];
+
+    // ---- Recommender state ----
+    const rec = s.rec || {};
+    const p = rec.players || null;
+    const t = rec.time || null;
+    const setP = (v) => () => this.setState({ rec: Object.assign({}, rec, { players: rec.players === v ? null : v }) });
+    const setT = (v) => () => this.setState({ rec: Object.assign({}, rec, { time: rec.time === v ? null : v }) });
+    const chip = (on) => on ? 'chip-on' : 'chip';
+
+    const matchP = (g) => !p || (p === 6 ? g.max >= 6 : (g.min <= p && g.max >= p));
+    const matchT = (g) => !t || g.bucket === t;
+    const results = GAMES.filter(g => matchP(g) && matchT(g)).map(deco);
 
     return {
       isHome: screen === 'home',
       isCat: screen === 'categoria',
       isDet: screen === 'detalle',
       isJuegos: screen === 'juegos',
+      isRec: screen === 'recomendador',
       isJuego: screen === 'juego',
       isSudoku: screen === 'sudoku',
+      isInfo: screen === 'info',
 
       goHome: nav('home'),
       goCat: nav('categoria'),
       goJuegos: nav('juegos'),
+      goRec: nav('recomendador'),
       goSudoku: nav('sudoku'),
+      goInfo: nav('info'),
       backFromDet: nav(s.detFrom || 'categoria'),
+      backFromJuego: nav(s.juegoFrom === 'recomendador' ? 'recomendador' : 'juegos'),
 
       openLatte: nav('detalle', { prod: P.latte, detFrom: 'home' }),
       openColdBrew: nav('detalle', { prod: P.coldbrew, detFrom: 'home' }),
@@ -341,12 +519,22 @@ class Component extends DCLogic {
       openChoco: nav('detalle', { prod: P.choco, detFrom: 'categoria' }),
       openAmericano: nav('detalle', { prod: P.americano, detFrom: 'categoria' }),
 
-      openCatan: nav('juego', { juego: G.catan }),
-      openAzul: nav('juego', { juego: G.azul }),
-      openUno: nav('juego', { juego: G.uno }),
+      featured: HOUSE.map(deco),
+      popular: [byId.catan, byId.azul, byId.uno, byId.themind].map(deco),
+
+      // recommender chips
+      pClass2: chip(p === 2), pClass3: chip(p === 3), pClass4: chip(p === 4), pClass5: chip(p === 5), pClass6: chip(p === 6),
+      tClassS: chip(t === 'corto'), tClassM: chip(t === 'medio'), tClassL: chip(t === 'largo'),
+      setP2: setP(2), setP3: setP(3), setP4: setP(4), setP5: setP(5), setP6: setP(6),
+      setTS: setT('corto'), setTM: setT('medio'), setTL: setT('largo'),
+      clearRec: () => this.setState({ rec: {} }),
+      results: results,
+      recCount: results.length + (results.length === 1 ? ' juego' : ' juegos'),
+      hasResults: results.length > 0,
+      noResults: results.length === 0,
 
       prod: s.prod || P.latte,
-      juego: s.juego || G.catan
+      juego: s.juego || byId.catan
     };
   }
 }
