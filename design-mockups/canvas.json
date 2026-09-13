@@ -1,0 +1,16 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 960 },
+    { "file": "Categoria.dc.html", "x": 470, "y": 0, "w": 390, "h": 880 },
+    { "file": "Juegos.dc.html", "x": 940, "y": 0, "w": 390, "h": 920 },
+    { "file": "Sudoku.dc.html", "x": 1410, "y": 0, "w": 390, "h": 780 }
+  ],
+  "annotations": [
+    { "id": "note-intro", "x": 0, "y": -170, "w": 500, "text": "Gógoblu — rediseño del menú (mobile-first, acceso por QR)\nDirección: cálido y acogedor, refinando el verde/dorado.\nTipografías: DM Serif Display (títulos) + DM Sans (texto)." },
+    { "id": "note-home", "x": 0, "y": -60, "w": 390, "text": "HOME · Categorías en tarjetas + buscador. Adiciones destacado. Juegos de mesa como categoría propia." },
+    { "id": "note-categoria", "x": 470, "y": -95, "w": 390, "text": "CATEGORÍA · Tarjetas con foto + descripción + precio. Las 2 primeras muestran foto (muestra); las de 'FOTO PRONTO' son el estado elegante mientras llegan las fotos la próxima semana — se reemplaza solo al poner la URL en el Sheet." },
+    { "id": "note-juegos", "x": 940, "y": -60, "w": 390, "text": "JUEGOS · Buscables, con los 'creados en la casa' destacados. La lista sigue viniendo del código/Sheet." },
+    { "id": "note-sudoku", "x": 1410, "y": -60, "w": 390, "text": "SUDOKU (opcional) · Se conserva como detalle divertido, integrado al nuevo estilo." }
+  ],
+  "launch": { "view": "canvas" }
+}
