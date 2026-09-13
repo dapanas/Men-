@@ -1,31 +1,30 @@
 {
   "pages": [
-    { "id": "prototipo", "name": "Prototipo ▶" },
-    { "id": "premium", "name": "Premium" },
-    { "id": "calida", "name": "Cálida" }
+    { "id": "calida-proto", "name": "Cálida ▶" },
+    { "id": "premium-proto", "name": "Premium ▶" },
+    { "id": "calida-static", "name": "Cálida · pantallas" },
+    { "id": "premium-static", "name": "Premium · pantallas" }
   ],
   "artboards": [
-    { "file": "PrototipoPremium.dc.html", "x": 0, "y": 0, "w": 390, "h": 844, "page": "prototipo", "is_interactive": true },
+    { "file": "PrototipoCalida.dc.html", "x": 0, "y": 0, "w": 390, "h": 844, "page": "calida-proto", "is_interactive": true },
+    { "file": "PrototipoPremium.dc.html", "x": 0, "y": 0, "w": 390, "h": 844, "page": "premium-proto", "is_interactive": true },
 
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 1380, "page": "premium" },
-    { "file": "Categoria.dc.html", "x": 470, "y": 0, "w": 390, "h": 840, "page": "premium" },
-    { "file": "Detalle.dc.html", "x": 940, "y": 0, "w": 390, "h": 940, "page": "premium" },
-    { "file": "Juegos.dc.html", "x": 1410, "y": 0, "w": 390, "h": 1260, "page": "premium" },
-    { "file": "JuegoDetalle.dc.html", "x": 1880, "y": 0, "w": 390, "h": 1020, "page": "premium" },
-    { "file": "Sudoku.dc.html", "x": 2350, "y": 0, "w": 390, "h": 780, "page": "premium" },
+    { "file": "MainCalida.dc.html", "x": 0, "y": 0, "w": 390, "h": 1260, "page": "calida-static" },
+    { "file": "DetalleCalida.dc.html", "x": 470, "y": 0, "w": 390, "h": 940, "page": "calida-static" },
+    { "file": "JuegoDetalleCalida.dc.html", "x": 940, "y": 0, "w": 390, "h": 1020, "page": "calida-static" },
 
-    { "file": "MainCalida.dc.html", "x": 0, "y": 0, "w": 390, "h": 1260, "page": "calida" },
-    { "file": "DetalleCalida.dc.html", "x": 470, "y": 0, "w": 390, "h": 940, "page": "calida" },
-    { "file": "JuegoDetalleCalida.dc.html", "x": 940, "y": 0, "w": 390, "h": 1020, "page": "calida" }
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 1380, "page": "premium-static" },
+    { "file": "Categoria.dc.html", "x": 470, "y": 0, "w": 390, "h": 840, "page": "premium-static" },
+    { "file": "Detalle.dc.html", "x": 940, "y": 0, "w": 390, "h": 940, "page": "premium-static" },
+    { "file": "Juegos.dc.html", "x": 1410, "y": 0, "w": 390, "h": 1260, "page": "premium-static" },
+    { "file": "JuegoDetalle.dc.html", "x": 1880, "y": 0, "w": 390, "h": 1020, "page": "premium-static" },
+    { "file": "Sudoku.dc.html", "x": 2350, "y": 0, "w": 390, "h": 780, "page": "premium-static" }
   ],
   "annotations": [
-    { "id": "note-proto", "x": 0, "y": -150, "w": 520, "text": "PROTOTIPO NAVEGABLE (Premium) · Toca las categorías, productos y juegos para navegar; usa el botón ← para volver. Ábrelo en pantalla completa para sentirlo como la app real.", "page": "prototipo" },
-
-    { "id": "note-prem-intro", "x": 0, "y": -175, "w": 560, "text": "PÁGINA PREMIUM (estática) · Editorial, aire, líneas finas, dorado sutil. Cormorant Garamond + Manrope. Home con carrusel de 'producto del mes', novedades, detalle, juegos con fichas y ficha de juego.", "page": "premium" },
-    { "id": "note-prem-juegos", "x": 1410, "y": -65, "w": 390, "text": "JUEGOS · Filtros, 'de la casa' destacados y fichas con jugadores y tiempo. →", "page": "premium" },
-    { "id": "note-prem-ficha", "x": 1880, "y": -65, "w": 390, "text": "FICHA DE JUEGO · Imagen, jugadores, duración, edad, dificultad, descripción y 'pídelo en barra'.", "page": "premium" },
-
-    { "id": "note-cal-intro", "x": 0, "y": -155, "w": 560, "text": "PÁGINA CÁLIDA (estática) · Misma estructura, más calidez: crema, tarjetas redondeadas, sombras suaves, banda verde. DM Serif Display + DM Sans.", "page": "calida" }
+    { "id": "note-cal-proto", "x": 0, "y": -150, "w": 520, "text": "PROTOTIPO CÁLIDO (navegable) · La dirección que más les gusta. Toca categorías, productos y juegos; usa ← para volver. Prueba el recomendador '¿Para su mesa?' y la pantalla Info. Ábrelo en pantalla completa.", "page": "calida-proto" },
+    { "id": "note-prem-proto", "x": 0, "y": -130, "w": 520, "text": "PROTOTIPO PREMIUM (navegable) · La otra dirección, para comparar. Mismas funciones: recomendador de juegos, ficha de juego, Info y reseña.", "page": "premium-proto" },
+    { "id": "note-cal-static", "x": 0, "y": -110, "w": 470, "text": "CÁLIDA · pantallas de referencia (Nunito): home, detalle de producto y ficha de juego.", "page": "calida-static" },
+    { "id": "note-prem-static", "x": 0, "y": -110, "w": 470, "text": "PREMIUM · pantallas de referencia. (Pendiente pasar a Nunito en la ronda con datos reales.)", "page": "premium-static" }
   ],
-  "launch": { "view": "focused", "file": "PrototipoPremium.dc.html" }
+  "launch": { "view": "focused", "file": "PrototipoCalida.dc.html" }
 }
