@@ -1,9 +1,12 @@
 {
   "pages": [
+    { "id": "prototipo", "name": "Prototipo ▶" },
     { "id": "premium", "name": "Premium" },
     { "id": "calida", "name": "Cálida" }
   ],
   "artboards": [
+    { "file": "PrototipoPremium.dc.html", "x": 0, "y": 0, "w": 390, "h": 844, "page": "prototipo", "is_interactive": true },
+
     { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 1380, "page": "premium" },
     { "file": "Categoria.dc.html", "x": 470, "y": 0, "w": 390, "h": 840, "page": "premium" },
     { "file": "Detalle.dc.html", "x": 940, "y": 0, "w": 390, "h": 940, "page": "premium" },
@@ -16,15 +19,13 @@
     { "file": "JuegoDetalleCalida.dc.html", "x": 940, "y": 0, "w": 390, "h": 1020, "page": "calida" }
   ],
   "annotations": [
-    { "id": "note-prem-intro", "x": 0, "y": -175, "w": 560, "text": "PÁGINA PREMIUM · Editorial, aire, líneas finas, dorado sutil. Cormorant Garamond + Manrope. Incluye: home con carrusel de 'producto del mes', novedades, detalle de producto, juegos con fichas ricas y ficha de juego.", "page": "premium" },
-    { "id": "note-prem-home", "x": 0, "y": -65, "w": 390, "text": "HOME · Producto del mes como CARRUSEL (varios posibles, con indicadores) + Novedades + carta.", "page": "premium" },
-    { "id": "note-prem-juegos", "x": 1410, "y": -65, "w": 390, "text": "JUEGOS · Filtros, 'de la casa' destacados y fichas con jugadores y tiempo. →", "page": "premium" },
-    { "id": "note-prem-ficha", "x": 1880, "y": -65, "w": 390, "text": "FICHA DE JUEGO (nueva) · Imagen, jugadores, duración, edad, dificultad, descripción y 'pídelo en barra'.", "page": "premium" },
+    { "id": "note-proto", "x": 0, "y": -150, "w": 520, "text": "PROTOTIPO NAVEGABLE (Premium) · Toca las categorías, productos y juegos para navegar; usa el botón ← para volver. Ábrelo en pantalla completa para sentirlo como la app real.", "page": "prototipo" },
 
-    { "id": "note-cal-intro", "x": 0, "y": -155, "w": 560, "text": "PÁGINA CÁLIDA · Misma estructura y features, con más calidez: crema, tarjetas redondeadas, sombras suaves, banda verde. DM Serif Display + DM Sans. Compara estas 3 pantallas clave con las de Premium.", "page": "calida" },
-    { "id": "note-cal-home", "x": 0, "y": -45, "w": 390, "text": "HOME cálido", "page": "calida" },
-    { "id": "note-cal-det", "x": 470, "y": -45, "w": 390, "text": "DETALLE de producto cálido", "page": "calida" },
-    { "id": "note-cal-juego", "x": 940, "y": -45, "w": 390, "text": "FICHA de juego cálida", "page": "calida" }
+    { "id": "note-prem-intro", "x": 0, "y": -175, "w": 560, "text": "PÁGINA PREMIUM (estática) · Editorial, aire, líneas finas, dorado sutil. Cormorant Garamond + Manrope. Home con carrusel de 'producto del mes', novedades, detalle, juegos con fichas y ficha de juego.", "page": "premium" },
+    { "id": "note-prem-juegos", "x": 1410, "y": -65, "w": 390, "text": "JUEGOS · Filtros, 'de la casa' destacados y fichas con jugadores y tiempo. →", "page": "premium" },
+    { "id": "note-prem-ficha", "x": 1880, "y": -65, "w": 390, "text": "FICHA DE JUEGO · Imagen, jugadores, duración, edad, dificultad, descripción y 'pídelo en barra'.", "page": "premium" },
+
+    { "id": "note-cal-intro", "x": 0, "y": -155, "w": 560, "text": "PÁGINA CÁLIDA (estática) · Misma estructura, más calidez: crema, tarjetas redondeadas, sombras suaves, banda verde. DM Serif Display + DM Sans.", "page": "calida" }
   ],
-  "launch": { "view": "canvas", "page": "premium" }
+  "launch": { "view": "focused", "file": "PrototipoPremium.dc.html" }
 }
