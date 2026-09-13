@@ -9,56 +9,53 @@
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif; }
+    body { margin: 0; font-family: "Manrope", "Helvetica Neue", Arial, sans-serif; }
     a { color: #315659; text-decoration: none; } a:hover { color: #24413f; }
     * { box-sizing: border-box; }
-    .cell { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 600; color: #2B2620; background: #FFFFFF; }
-    .cell-fixed { color: #315659; }
-    .cell-empty { background: #FBF7EE; color: #C0B392; }
+    .serif { font-family: "Cormorant Garamond", Georgia, serif; }
+    .eyebrow { font-size: 11px; letter-spacing: 2.4px; text-transform: uppercase; font-weight: 600; }
+    .cell { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 600; color: #315659; background: #FFFFFF; }
+    .cell-empty { background: #FBFAF6; color: #C9BFA6; }
   </style>
 </helmet>
 
-<div style="width: 390px; min-height: 760px; background: #F6EFE1; color: #2B2620;">
+<div style="width: 390px; min-height: 760px; background: #FBFAF6; color: #22302E;">
 
-  <!-- Header -->
-  <div style="background: #315659; color: #F6EFE1; padding: 22px 22px 22px 22px; border-radius: 0 0 26px 26px;">
+  <div style="padding: 22px 26px 18px 26px;">
     <div style="display: flex; align-items: center; gap: 12px;">
-      <div style="width: 36px; height: 36px; border-radius: 11px; background: rgba(246,239,225,0.14); display: flex; align-items: center; justify-content: center;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6EFE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-      </div>
-      <div style="flex-grow: 1;">
-        <div style="font-family: 'DM Serif Display', Georgia, serif; font-size: 23px; line-height: 1.1;">Sudoku</div>
-        <div style="margin-top: 2px; font-size: 12.5px; color: #B7C4C2;">Mientras esperas tu pedido ✦</div>
-      </div>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      <div class="eyebrow" style="color: #B79448;">Mientras esperas</div>
     </div>
+    <div class="serif" style="margin-top: 12px; font-size: 34px; line-height: 1; color: #22302E;">Sudoku</div>
+    <div style="margin-top: 6px; color: #A79F8C; font-size: 13px;">Un reto rápido con tu café ✦</div>
   </div>
 
-  <div style="padding: 24px 22px 26px 22px;">
+  <div style="height: 1px; background: #ECE7DB; margin: 0 26px;"></div>
 
-    <!-- Board -->
-    <div style="background: #315659; padding: 6px; border-radius: 16px; width: fit-content; margin: 0 auto; box-shadow: 0 10px 24px rgba(49,86,89,0.18);">
-      <div style="display: grid; grid-template-columns: repeat(9, 34px); grid-template-rows: repeat(9, 34px); gap: 1px; background: #C9BDA0;">
-        <div class="cell cell-fixed">5</div><div class="cell cell-fixed">3</div><div class="cell cell-empty"></div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-fixed">7</div><div class="cell cell-empty"></div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-empty"></div><div class="cell cell-empty"></div>
-        <div class="cell cell-fixed">6</div><div class="cell cell-empty"></div><div class="cell cell-empty"></div><div class="cell cell-fixed" style="border-left: 2px solid #315659;">1</div><div class="cell cell-fixed">9</div><div class="cell cell-fixed">5</div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-empty"></div><div class="cell cell-empty"></div>
-        <div class="cell cell-empty"></div><div class="cell cell-fixed">9</div><div class="cell cell-fixed">8</div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-empty"></div><div class="cell cell-empty"></div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-fixed">6</div><div class="cell cell-empty"></div>
-        <div class="cell cell-fixed" style="border-top: 2px solid #315659;">8</div><div class="cell cell-empty" style="border-top: 2px solid #315659;"></div><div class="cell cell-empty" style="border-top: 2px solid #315659;"></div><div class="cell cell-empty" style="border-top: 2px solid #315659; border-left: 2px solid #315659;"></div><div class="cell cell-fixed" style="border-top: 2px solid #315659;">6</div><div class="cell cell-empty" style="border-top: 2px solid #315659;"></div><div class="cell cell-empty" style="border-top: 2px solid #315659; border-left: 2px solid #315659;"></div><div class="cell cell-empty" style="border-top: 2px solid #315659;"></div><div class="cell cell-fixed" style="border-top: 2px solid #315659;">3</div>
-        <div class="cell cell-fixed">4</div><div class="cell cell-empty"></div><div class="cell cell-empty"></div><div class="cell cell-fixed" style="border-left: 2px solid #315659;">8</div><div class="cell cell-empty"></div><div class="cell cell-fixed">3</div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-empty"></div><div class="cell cell-fixed">1</div>
-        <div class="cell cell-fixed">7</div><div class="cell cell-empty"></div><div class="cell cell-empty"></div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-fixed">2</div><div class="cell cell-empty"></div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-empty"></div><div class="cell cell-fixed">6</div>
-        <div class="cell cell-empty" style="border-top: 2px solid #315659;"></div><div class="cell cell-fixed" style="border-top: 2px solid #315659;">6</div><div class="cell cell-empty" style="border-top: 2px solid #315659;"></div><div class="cell cell-empty" style="border-top: 2px solid #315659; border-left: 2px solid #315659;"></div><div class="cell cell-empty" style="border-top: 2px solid #315659;"></div><div class="cell cell-empty" style="border-top: 2px solid #315659;"></div><div class="cell cell-fixed" style="border-top: 2px solid #315659; border-left: 2px solid #315659;">2</div><div class="cell cell-fixed" style="border-top: 2px solid #315659;">8</div><div class="cell cell-empty" style="border-top: 2px solid #315659;"></div>
-        <div class="cell cell-empty"></div><div class="cell cell-empty"></div><div class="cell cell-empty"></div><div class="cell cell-fixed" style="border-left: 2px solid #315659;">4</div><div class="cell cell-fixed">1</div><div class="cell cell-fixed">9</div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-empty"></div><div class="cell cell-fixed">5</div>
-        <div class="cell cell-empty"></div><div class="cell cell-empty"></div><div class="cell cell-empty"></div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-fixed">8</div><div class="cell cell-empty"></div><div class="cell cell-empty" style="border-left: 2px solid #315659;"></div><div class="cell cell-fixed">7</div><div class="cell cell-fixed">9</div>
+  <div style="padding: 28px 26px 30px 26px;">
+
+    <div style="border: 2px solid #315659; border-radius: 4px; width: fit-content; margin: 0 auto; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: repeat(9, 34px); grid-template-rows: repeat(9, 34px); gap: 1px; background: #DED4BC;">
+        <div class="cell">5</div><div class="cell">3</div><div class="cell-empty cell"></div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell">7</div><div class="cell-empty cell"></div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell-empty cell"></div><div class="cell-empty cell"></div>
+        <div class="cell">6</div><div class="cell-empty cell"></div><div class="cell-empty cell"></div><div class="cell" style="border-left: 2px solid #315659;">1</div><div class="cell">9</div><div class="cell">5</div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell-empty cell"></div><div class="cell-empty cell"></div>
+        <div class="cell-empty cell"></div><div class="cell">9</div><div class="cell">8</div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell-empty cell"></div><div class="cell-empty cell"></div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell">6</div><div class="cell-empty cell"></div>
+        <div class="cell" style="border-top: 2px solid #315659;">8</div><div class="cell-empty cell" style="border-top: 2px solid #315659;"></div><div class="cell-empty cell" style="border-top: 2px solid #315659;"></div><div class="cell-empty cell" style="border-top: 2px solid #315659; border-left: 2px solid #315659;"></div><div class="cell" style="border-top: 2px solid #315659;">6</div><div class="cell-empty cell" style="border-top: 2px solid #315659;"></div><div class="cell-empty cell" style="border-top: 2px solid #315659; border-left: 2px solid #315659;"></div><div class="cell-empty cell" style="border-top: 2px solid #315659;"></div><div class="cell" style="border-top: 2px solid #315659;">3</div>
+        <div class="cell">4</div><div class="cell-empty cell"></div><div class="cell-empty cell"></div><div class="cell" style="border-left: 2px solid #315659;">8</div><div class="cell-empty cell"></div><div class="cell">3</div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell-empty cell"></div><div class="cell">1</div>
+        <div class="cell">7</div><div class="cell-empty cell"></div><div class="cell-empty cell"></div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell">2</div><div class="cell-empty cell"></div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell-empty cell"></div><div class="cell">6</div>
+        <div class="cell-empty cell" style="border-top: 2px solid #315659;"></div><div class="cell" style="border-top: 2px solid #315659;">6</div><div class="cell-empty cell" style="border-top: 2px solid #315659;"></div><div class="cell-empty cell" style="border-top: 2px solid #315659; border-left: 2px solid #315659;"></div><div class="cell-empty cell" style="border-top: 2px solid #315659;"></div><div class="cell-empty cell" style="border-top: 2px solid #315659;"></div><div class="cell" style="border-top: 2px solid #315659; border-left: 2px solid #315659;">2</div><div class="cell" style="border-top: 2px solid #315659;">8</div><div class="cell-empty cell" style="border-top: 2px solid #315659;"></div>
+        <div class="cell-empty cell"></div><div class="cell-empty cell"></div><div class="cell-empty cell"></div><div class="cell" style="border-left: 2px solid #315659;">4</div><div class="cell">1</div><div class="cell">9</div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell-empty cell"></div><div class="cell">5</div>
+        <div class="cell-empty cell"></div><div class="cell-empty cell"></div><div class="cell-empty cell"></div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell">8</div><div class="cell-empty cell"></div><div class="cell-empty cell" style="border-left: 2px solid #315659;"></div><div class="cell">7</div><div class="cell">9</div>
       </div>
     </div>
 
-    <!-- Actions -->
-    <div style="display: flex; gap: 10px; margin-top: 22px;">
-      <button style="flex-grow: 1; background: #D7BC77; color: #315659; border: none; border-radius: 14px; padding: 14px; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer;">Comprobar</button>
-      <button style="background: #FFFFFF; color: #315659; border: 1px solid #E6DABF; border-radius: 14px; padding: 14px 18px; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer;">Nuevo</button>
+    <div style="display: flex; gap: 10px; margin-top: 24px;">
+      <button style="flex-grow: 1; background: #315659; color: #F6EFE1; border: none; border-radius: 4px; padding: 14px; font-size: 14px; font-weight: 600; font-family: inherit; letter-spacing: 0.3px; cursor: pointer;">Comprobar</button>
+      <button style="background: transparent; color: #315659; border: 1px solid #315659; border-radius: 4px; padding: 14px 20px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer;">Nuevo</button>
     </div>
 
-    <div style="margin-top: 16px; text-align: center; color: #8C8272; font-size: 12.5px; line-height: 1.4;">Toca una celda vacía y escribe. <br>¡Resuélvelo y muéstraselo al barista! ☕</div>
+    <div style="margin-top: 16px; text-align: center; color: #A79F8C; font-size: 12.5px; line-height: 1.5;">Toca una celda vacía y escribe.<br>Resuélvelo y muéstraselo al barista ☕</div>
 
   </div>
 

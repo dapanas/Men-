@@ -1,16 +1,18 @@
 {
   "artboards": [
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 960 },
-    { "file": "Categoria.dc.html", "x": 470, "y": 0, "w": 390, "h": 880 },
-    { "file": "Juegos.dc.html", "x": 940, "y": 0, "w": 390, "h": 920 },
-    { "file": "Sudoku.dc.html", "x": 1410, "y": 0, "w": 390, "h": 780 }
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 1340 },
+    { "file": "Categoria.dc.html", "x": 470, "y": 0, "w": 390, "h": 840 },
+    { "file": "Detalle.dc.html", "x": 940, "y": 0, "w": 390, "h": 920 },
+    { "file": "Juegos.dc.html", "x": 1410, "y": 0, "w": 390, "h": 920 },
+    { "file": "Sudoku.dc.html", "x": 1880, "y": 0, "w": 390, "h": 780 }
   ],
   "annotations": [
-    { "id": "note-intro", "x": 0, "y": -170, "w": 500, "text": "Gógoblu — rediseño del menú (mobile-first, acceso por QR)\nDirección: cálido y acogedor, refinando el verde/dorado.\nTipografías: DM Serif Display (títulos) + DM Sans (texto)." },
-    { "id": "note-home", "x": 0, "y": -60, "w": 390, "text": "HOME · Categorías en tarjetas + buscador. Adiciones destacado. Juegos de mesa como categoría propia." },
-    { "id": "note-categoria", "x": 470, "y": -95, "w": 390, "text": "CATEGORÍA · Tarjetas con foto + descripción + precio. Las 2 primeras muestran foto (muestra); las de 'FOTO PRONTO' son el estado elegante mientras llegan las fotos la próxima semana — se reemplaza solo al poner la URL en el Sheet." },
-    { "id": "note-juegos", "x": 940, "y": -60, "w": 390, "text": "JUEGOS · Buscables, con los 'creados en la casa' destacados. La lista sigue viniendo del código/Sheet." },
-    { "id": "note-sudoku", "x": 1410, "y": -60, "w": 390, "text": "SUDOKU (opcional) · Se conserva como detalle divertido, integrado al nuevo estilo." }
+    { "id": "note-intro", "x": 0, "y": -180, "w": 520, "text": "Gógoblu — rediseño del menú · Dirección LIMPIA / PREMIUM\nEditorial, mucho aire, líneas finas, dorado como acento fino.\nTipografías: Cormorant Garamond (títulos) + Manrope (texto).\nSin buscador." },
+    { "id": "note-home", "x": 0, "y": -70, "w": 390, "text": "HOME · Producto del mes (hero de temporada) + Novedades + carta como lista editorial." },
+    { "id": "note-categoria", "x": 470, "y": -70, "w": 390, "text": "CATEGORÍA · Lista con miniatura, precio y estado 'foto pronto'. Etiqueta 'Nuevo' donde aplica. Cada fila abre el detalle." },
+    { "id": "note-detalle", "x": 940, "y": -95, "w": 390, "text": "DETALLE (nuevo) · Foto grande, descripción, etiquetas, nota de disponibilidad (temporada) y adiciones sugeridas. Este es el que 'vende'." },
+    { "id": "note-juegos", "x": 1410, "y": -70, "w": 390, "text": "JUEGOS · Estilo premium, 'creados en la casa' destacados." },
+    { "id": "note-sudoku", "x": 1880, "y": -70, "w": 390, "text": "SUDOKU (opcional) · Restilizado al look premium." }
   ],
   "launch": { "view": "canvas" }
 }

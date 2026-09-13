@@ -9,94 +9,90 @@
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif; }
+    body { margin: 0; font-family: "Manrope", "Helvetica Neue", Arial, sans-serif; }
     a { color: #315659; text-decoration: none; } a:hover { color: #24413f; }
     * { box-sizing: border-box; }
+    .serif { font-family: "Cormorant Garamond", Georgia, serif; }
+    .eyebrow { font-size: 11px; letter-spacing: 2.4px; text-transform: uppercase; font-weight: 600; }
+    .tag { display: inline-flex; align-items: center; gap: 4px; font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; padding: 3px 8px; border-radius: 999px; }
+    .price { font-family: "Cormorant Garamond", Georgia, serif; font-size: 21px; color: #315659; font-weight: 600; }
+    .item { display: flex; gap: 15px; padding: 18px 0; border-top: 1px solid #ECE7DB; }
+    .thumb { width: 68px; height: 68px; border-radius: 4px; flex-shrink: 0; border: 1px solid #E7DFCB; }
+    .thumb-pending { width: 68px; height: 68px; border-radius: 4px; flex-shrink: 0; border: 1px dashed #D9C79A; background: #F7F1E3; display: flex; align-items: center; justify-content: center; }
   </style>
 </helmet>
 
-<div style="width: 390px; min-height: 860px; background: #F6EFE1; color: #2B2620;">
+<div style="width: 390px; min-height: 820px; background: #FBFAF6; color: #22302E;">
 
   <!-- Header -->
-  <div style="background: #315659; color: #F6EFE1; padding: 22px 22px 22px 22px; border-radius: 0 0 26px 26px;">
+  <div style="padding: 22px 26px 18px 26px;">
     <div style="display: flex; align-items: center; gap: 12px;">
-      <div style="width: 36px; height: 36px; border-radius: 11px; background: rgba(246,239,225,0.14); display: flex; align-items: center; justify-content: center;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6EFE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-      </div>
-      <div style="flex-grow: 1;">
-        <div style="font-family: 'DM Serif Display', Georgia, serif; font-size: 23px; line-height: 1.1;">Bebidas calientes</div>
-        <div style="margin-top: 2px; font-size: 12.5px; color: #B7C4C2;">6 productos disponibles</div>
-      </div>
-      <div style="width: 40px; height: 40px; border-radius: 12px; background: #D7BC77; display: flex; align-items: center; justify-content: center;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M8 2c-.4.7-.4 1.3 0 2M12 2c-.4.7-.4 1.3 0 2"/></svg>
-      </div>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      <div class="eyebrow" style="color: #B79448;">Carta · Bebidas calientes</div>
     </div>
+    <div class="serif" style="margin-top: 12px; font-size: 34px; line-height: 1; color: #22302E;">Bebidas calientes</div>
+    <div style="margin-top: 6px; color: #A79F8C; font-size: 13px;">6 productos disponibles</div>
   </div>
 
-  <!-- Product list -->
-  <div style="padding: 18px 18px 24px 18px; display: flex; flex-direction: column; gap: 12px;">
+  <div style="padding: 0 26px 24px 26px;">
 
-    <!-- Card WITH photo (sample) -->
-    <div style="display: flex; gap: 14px; background: #FFFFFF; border: 1px solid #EFE6D2; border-radius: 18px; padding: 12px; box-shadow: 0 6px 16px rgba(49,86,89,0.06);">
-      <div style="width: 84px; height: 84px; border-radius: 14px; flex-shrink: 0; background: linear-gradient(150deg, #C79A5B, #7A4A28); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px; position: relative; overflow: hidden;">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M8 2c-.4.7-.4 1.3 0 2M12 2c-.4.7-.4 1.3 0 2"/></svg>
-      </div>
+    <div class="item">
+      <div class="thumb" style="background: linear-gradient(150deg, #C79A5B, #7A4A28);"></div>
       <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-        <div style="font-weight: 600; font-size: 15.5px;">Cappuccino</div>
-        <div style="margin-top: 3px; color: #8C8272; font-size: 12.5px; line-height: 1.35;">Espresso doble con leche cremada</div>
-        <div style="margin-top: 8px; font-family: 'DM Serif Display', Georgia, serif; color: #315659; font-size: 17px;">$8.500</div>
+        <div style="display: flex; align-items: center; gap: 8px;"><div class="serif" style="font-size: 22px; color: #22302E;">Cappuccino</div></div>
+        <div style="margin-top: 2px; color: #857C6A; font-size: 12.5px; line-height: 1.4;">Espresso doble con leche cremada</div>
       </div>
+      <div class="price" style="align-self: center;">$8.500</div>
     </div>
 
-    <!-- Card WITH photo (sample) -->
-    <div style="display: flex; gap: 14px; background: #FFFFFF; border: 1px solid #EFE6D2; border-radius: 18px; padding: 12px; box-shadow: 0 6px 16px rgba(49,86,89,0.06);">
-      <div style="width: 84px; height: 84px; border-radius: 14px; flex-shrink: 0; background: linear-gradient(150deg, #8BA98F, #375B45); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/></svg>
-      </div>
+    <div class="item">
+      <div class="thumb" style="background: linear-gradient(150deg, #8BA98F, #375B45);"></div>
       <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-        <div style="font-weight: 600; font-size: 15.5px;">Té chai</div>
-        <div style="margin-top: 3px; color: #8C8272; font-size: 12.5px; line-height: 1.35;">Especias, leche y un toque de miel</div>
-        <div style="margin-top: 8px; font-family: 'DM Serif Display', Georgia, serif; color: #315659; font-size: 17px;">$9.000</div>
+        <div style="display: flex; align-items: center; gap: 8px;"><div class="serif" style="font-size: 22px; color: #22302E;">Té chai</div><span class="tag" style="background: #315659; color: #F6EFE1;">Nuevo</span></div>
+        <div style="margin-top: 2px; color: #857C6A; font-size: 12.5px; line-height: 1.4;">Especias, leche y un toque de miel</div>
       </div>
+      <div class="price" style="align-self: center;">$9.000</div>
     </div>
 
-    <!-- Card PENDING photo -->
-    <div style="display: flex; gap: 14px; background: #FFFFFF; border: 1px solid #EFE6D2; border-radius: 18px; padding: 12px; box-shadow: 0 6px 16px rgba(49,86,89,0.06);">
-      <div style="width: 84px; height: 84px; border-radius: 14px; flex-shrink: 0; background: #F3EAD4; border: 1.5px dashed #D9C79A; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B79D63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
-        <span style="font-size: 9px; color: #B79D63; font-weight: 600; letter-spacing: 0.3px;">FOTO PRONTO</span>
+    <div class="item">
+      <div class="thumb-pending">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BFA76B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
       </div>
       <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-        <div style="font-weight: 600; font-size: 15.5px;">Chocolate caliente</div>
-        <div style="margin-top: 3px; color: #8C8272; font-size: 12.5px; line-height: 1.35;">Cacao artesanal con leche</div>
-        <div style="margin-top: 8px; font-family: 'DM Serif Display', Georgia, serif; color: #315659; font-size: 17px;">$7.500</div>
+        <div class="serif" style="font-size: 22px; color: #22302E;">Chocolate caliente</div>
+        <div style="margin-top: 2px; color: #857C6A; font-size: 12.5px; line-height: 1.4;">Cacao artesanal con leche</div>
       </div>
+      <div class="price" style="align-self: center;">$7.500</div>
     </div>
 
-    <!-- Card PENDING photo -->
-    <div style="display: flex; gap: 14px; background: #FFFFFF; border: 1px solid #EFE6D2; border-radius: 18px; padding: 12px; box-shadow: 0 6px 16px rgba(49,86,89,0.06);">
-      <div style="width: 84px; height: 84px; border-radius: 14px; flex-shrink: 0; background: #F3EAD4; border: 1.5px dashed #D9C79A; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B79D63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
-        <span style="font-size: 9px; color: #B79D63; font-weight: 600; letter-spacing: 0.3px;">FOTO PRONTO</span>
+    <div class="item">
+      <div class="thumb-pending">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BFA76B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
       </div>
       <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-        <div style="font-weight: 600; font-size: 15.5px;">Aromática de frutas</div>
-        <div style="margin-top: 3px; color: #8C8272; font-size: 12.5px; line-height: 1.35;">Infusión de la casa</div>
-        <div style="margin-top: 8px; font-family: 'DM Serif Display', Georgia, serif; color: #315659; font-size: 17px;">$6.000</div>
+        <div class="serif" style="font-size: 22px; color: #22302E;">Aromática de frutas</div>
+        <div style="margin-top: 2px; color: #857C6A; font-size: 12.5px; line-height: 1.4;">Infusión de la casa</div>
       </div>
+      <div class="price" style="align-self: center;">$6.000</div>
     </div>
 
-    <!-- Card compact (no desc) -->
-    <div style="display: flex; gap: 14px; background: #FFFFFF; border: 1px solid #EFE6D2; border-radius: 18px; padding: 12px; box-shadow: 0 6px 16px rgba(49,86,89,0.06);">
-      <div style="width: 84px; height: 84px; border-radius: 14px; flex-shrink: 0; background: linear-gradient(150deg, #D9B98A, #9C6B3E); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/></svg>
-      </div>
+    <div class="item">
+      <div class="thumb" style="background: linear-gradient(150deg, #D9B98A, #9C6B3E);"></div>
       <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-        <div style="font-weight: 600; font-size: 15.5px;">Americano</div>
-        <div style="margin-top: 8px; font-family: 'DM Serif Display', Georgia, serif; color: #315659; font-size: 17px;">$5.500</div>
+        <div class="serif" style="font-size: 22px; color: #22302E;">Americano</div>
       </div>
+      <div class="price" style="align-self: center;">$5.500</div>
+    </div>
+
+    <div class="item" style="border-bottom: 1px solid #ECE7DB;">
+      <div class="thumb" style="background: linear-gradient(150deg, #B98C57, #6E4522);"></div>
+      <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+        <div class="serif" style="font-size: 22px; color: #22302E;">Espresso</div>
+        <div style="margin-top: 2px; color: #857C6A; font-size: 12.5px; line-height: 1.4;">Origen Colombia, tueste medio</div>
+      </div>
+      <div class="price" style="align-self: center;">$4.500</div>
     </div>
 
   </div>
