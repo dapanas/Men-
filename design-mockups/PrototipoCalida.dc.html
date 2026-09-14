@@ -19,11 +19,12 @@
     .display { font-family: "Nunito", sans-serif; font-weight: 800; letter-spacing: -0.02em; }
     .eyebrow { font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; font-weight: 800; }
     .tag { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; letter-spacing: 0.6px; text-transform: uppercase; font-weight: 800; padding: 4px 10px; border-radius: 999px; }
-    .price { font-family: "Nunito", sans-serif; font-weight: 800; font-size: 19px; color: #315659; }
+    .tag-stock { font-size: 9.5px; letter-spacing: 0.4px; text-transform: uppercase; font-weight: 800; padding: 3px 8px; border-radius: 999px; background: #F3E6C8; color: #9A7A2E; }
+    .price { font-family: "Nunito", sans-serif; font-weight: 800; font-size: 18px; color: #315659; }
     .card { background: #FFFCF4; border: 1px solid #EEE1C6; border-radius: 18px; box-shadow: 0 8px 20px rgba(49,86,89,0.07); }
-    .row-cat { display: flex; align-items: center; gap: 14px; padding: 15px 0; border-top: 1px solid #EEE1C6; cursor: pointer; }
-    .item { display: flex; gap: 14px; background: #FFFCF4; border: 1px solid #EEE1C6; border-radius: 16px; padding: 11px; margin-bottom: 12px; box-shadow: 0 6px 16px rgba(49,86,89,0.05); cursor: pointer; }
-    .thumb { width: 72px; height: 72px; border-radius: 13px; flex-shrink: 0; }
+    .item { display: flex; gap: 14px; background: #FFFCF4; border: 1px solid #EEE1C6; border-radius: 16px; padding: 11px; margin-bottom: 11px; box-shadow: 0 6px 16px rgba(49,86,89,0.05); cursor: pointer; }
+    .thumb { width: 70px; height: 70px; border-radius: 13px; flex-shrink: 0; position: relative; display: flex; align-items: center; justify-content: center; }
+    .thumb-cam { position: absolute; opacity: 0.5; }
     .back { width: 40px; height: 40px; border-radius: 50%; background: #FFFCF4; border: 1px solid #EEE1C6; display: flex; align-items: center; justify-content: center; cursor: pointer; }
     .iconbtn { width: 40px; height: 40px; border-radius: 50%; background: rgba(246,238,224,0.18); display: flex; align-items: center; justify-content: center; cursor: pointer; }
     .gcard { display: flex; gap: 13px; background: #FFFCF4; border: 1px solid #EEE1C6; border-radius: 16px; padding: 11px; margin-bottom: 12px; box-shadow: 0 6px 16px rgba(49,86,89,0.05); cursor: pointer; }
@@ -35,6 +36,7 @@
     .chip-on { border: 1px solid #315659; background: #315659; border-radius: 999px; padding: 9px 15px; font-size: 14px; color: #F6EFE1; font-weight: 700; cursor: pointer; white-space: nowrap; }
     .cell { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; color: #315659; background: #FFFCF4; }
     .cell-empty { background: #F6EEE0; color: #C9BFA6; }
+    .catcard { display:flex; flex-direction:column; align-items:flex-start; }
   </style>
 </helmet>
 
@@ -43,7 +45,6 @@
   <!-- ============ HOME ============ -->
   <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
   <div class="screen">
-    <!-- green band -->
     <div style="background: #315659; color: #F6EFE1; padding: 26px 24px 24px 24px; border-radius: 0 0 26px 26px;">
       <div style="display: flex; align-items: center; justify-content: space-between;">
         <div style="display: flex; align-items: center; gap: 11px;">
@@ -55,19 +56,19 @@
       <div style="margin-top: 12px; font-size: 14px; color: #E7D9B5; font-weight: 700;">Café de especialidad &amp; juegos de mesa</div>
     </div>
 
-    <!-- Seasonal -->
+    <!-- Producto del mes -->
     <div style="padding: 22px 24px 0 24px;">
       <div class="eyebrow" style="color: #B0843C;">✦ Producto del mes</div>
-      <div class="card" onClick="{{ openLatte }}" style="margin-top: 12px; overflow: hidden; padding: 0; cursor: pointer;">
-        <div style="height: 176px; background: linear-gradient(155deg, #35595B, #1E3A38); position: relative; display: flex; align-items: center; justify-content: center;">
+      <div class="card" onClick="{{ openHero }}" style="margin-top: 12px; overflow: hidden; padding: 0; cursor: pointer;">
+        <div style="height: 176px; background: {{ hero.grad }}; position: relative; display: flex; align-items: center; justify-content: center;">
           <span class="tag" style="position: absolute; top: 14px; left: 14px; background: #D7BC77; color: #2B3F2F;">✦ Temporada</span>
-          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M8 2c-.4.7-.4 1.3 0 2M12 2c-.4.7-.4 1.3 0 2"/></svg>
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
         </div>
         <div style="padding: 16px 18px;">
-          <div class="display" style="font-size: 22px;">Latte de calabaza</div>
-          <div style="margin-top: 5px; color: #8C8272; font-size: 13px; font-weight: 600;">Espresso, leche cremada y especias.</div>
+          <div class="display" style="font-size: 22px;">{{ hero.name }}</div>
+          <div style="margin-top: 5px; color: #8C8272; font-size: 13px; font-weight: 600;">{{ hero.desc }}</div>
           <div style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between;">
-            <span class="price" style="font-size: 21px;">$12.000</span>
+            <span class="price" style="font-size: 21px;">{{ hero.priceF }}</span>
             <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; color: #315659;">Ver detalle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#315659" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
           </div>
         </div>
@@ -78,39 +79,46 @@
     <div style="padding: 22px 0 0 0;">
       <div class="eyebrow" style="padding: 0 24px; color: #B0843C;">Novedades</div>
       <div style="margin-top: 12px; display: flex; gap: 14px; overflow: hidden; padding: 0 24px;">
-        <div onClick="{{ openColdBrew }}" style="width: 150px; flex-shrink: 0; cursor: pointer;">
-          <div style="height: 118px; border-radius: 16px; background: linear-gradient(150deg, #C79A5B, #7A4A28); position: relative; box-shadow: 0 6px 16px rgba(49,86,89,0.08);"><span class="tag" style="position: absolute; top: 10px; left: 10px; background: #315659; color: #F6EFE1;">Nuevo</span></div>
-          <div style="margin-top: 9px; font-weight: 700; font-size: 14px;">Cold brew de naranja</div>
-          <div class="price" style="margin-top: 1px; font-size: 17px;">$10.500</div>
-        </div>
-        <div onClick="{{ openCheesecake }}" style="width: 150px; flex-shrink: 0; cursor: pointer;">
-          <div style="height: 118px; border-radius: 16px; background: linear-gradient(150deg, #D9B98A, #9C6B3E); position: relative; box-shadow: 0 6px 16px rgba(49,86,89,0.08);"><span class="tag" style="position: absolute; top: 10px; left: 10px; background: #315659; color: #F6EFE1;">Nuevo</span></div>
-          <div style="margin-top: 9px; font-weight: 700; font-size: 14px;">Cheesecake maracuyá</div>
-          <div class="price" style="margin-top: 1px; font-size: 17px;">$9.500</div>
-        </div>
-        <div style="width: 40px; flex-shrink: 0;"></div>
+        <sc-for list="{{ novedades }}" as="n" hint-placeholder-count="3">
+          <div onClick="{{ n.open }}" style="width: 150px; flex-shrink: 0; cursor: pointer;">
+            <div style="height: 118px; border-radius: 16px; background: {{ n.grad }}; position: relative; box-shadow: 0 6px 16px rgba(49,86,89,0.08); display:flex; align-items:center; justify-content:center;"><span class="tag" style="position: absolute; top: 10px; left: 10px; background: #315659; color: #F6EFE1;">Nuevo</span><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+            <div style="margin-top: 9px; font-weight: 700; font-size: 14px;">{{ n.name }}</div>
+            <div class="price" style="margin-top: 1px; font-size: 17px;">{{ n.priceF }}</div>
+          </div>
+        </sc-for>
+        <div style="width: 24px; flex-shrink: 0;"></div>
       </div>
     </div>
 
-    <!-- Categories grid -->
+    <!-- Categories -->
     <div style="padding: 24px 24px 0 24px;">
       <div class="eyebrow" style="color: #B0843C; margin-bottom: 12px;">Explora la carta</div>
       <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px;">
-        <div class="card" onClick="{{ goCat }}" style="padding: 15px; cursor: pointer;">
+        <div class="card catcard" onClick="{{ openCalientes }}" style="padding: 15px; cursor: pointer;">
           <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/></svg></div>
           <div style="margin-top: 11px; font-weight: 700; font-size: 14.5px;">Bebidas calientes</div>
+          <div style="color:#A99E88; font-size:12px; font-weight:700; margin-top:2px;">{{ cCalientes }} opciones</div>
         </div>
-        <div class="card" onClick="{{ goCat }}" style="padding: 15px; cursor: pointer;">
+        <div class="card catcard" onClick="{{ openDulces }}" style="padding: 15px; cursor: pointer;">
           <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16"/><path d="M5 21v-6a7 7 0 0 1 14 0v6"/><path d="M12 8V5"/></svg></div>
           <div style="margin-top: 11px; font-weight: 700; font-size: 14.5px;">Productos dulces</div>
+          <div style="color:#A99E88; font-size:12px; font-weight:700; margin-top:2px;">{{ cDulces }} opciones</div>
         </div>
-        <div class="card" onClick="{{ goCat }}" style="padding: 15px; cursor: pointer;">
-          <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M12 15v7"/><path d="M5 3h14l-1 6a6 6 0 0 1-12 0L5 3z"/></svg></div>
+        <div class="card catcard" onClick="{{ openSalados }}" style="padding: 15px; cursor: pointer;">
+          <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11c2-4 16-4 18 0"/><path d="M4 11c0 5 3 8 8 8s8-3 8-8"/></svg></div>
+          <div style="margin-top: 11px; font-weight: 700; font-size: 14.5px;">Productos salados</div>
+          <div style="color:#A99E88; font-size:12px; font-weight:700; margin-top:2px;">{{ cSalados }} opciones</div>
+        </div>
+        <div class="card catcard" onClick="{{ openFrias }}" style="padding: 15px; cursor: pointer;">
+          <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8z"/><path d="M9 8V5a3 3 0 0 1 6 0v3"/></svg></div>
           <div style="margin-top: 11px; font-weight: 700; font-size: 14.5px;">Bebidas frías</div>
+          <div style="color:#A99E88; font-size:12px; font-weight:700; margin-top:2px;">{{ cFrias }} opciones</div>
         </div>
-        <div class="card" onClick="{{ goCat }}" style="padding: 15px; cursor: pointer;">
-          <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8M9 2v2.8L5 10a4 4 0 0 0 3.5 6h7A4 4 0 0 0 19 10l-4-5.2V2"/></svg></div>
-          <div style="margin-top: 11px; font-weight: 700; font-size: 14.5px;">Licores</div>
+        <div class="card catcard" onClick="{{ openLicores }}" style="padding: 15px; cursor: pointer; grid-column: span 2;">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width: 42px; height: 42px; border-radius: 12px; background: #F3EAD4; display: flex; align-items: center; justify-content: center; flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M12 15v7"/><path d="M5 3h14l-1 6a6 6 0 0 1-12 0L5 3z"/></svg></div>
+            <div><div style="font-weight: 700; font-size: 14.5px;">Licores</div><div style="color:#A99E88; font-size:12px; font-weight:700; margin-top:2px;">{{ cLicores }} opciones · cervezas &amp; más</div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -134,30 +142,20 @@
     <div style="background: #315659; color: #F6EFE1; padding: 22px 24px 22px 24px; border-radius: 0 0 24px 24px;">
       <div style="display: flex; align-items: center; gap: 12px;">
         <div class="iconbtn" onClick="{{ goHome }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6EFE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
-        <div style="flex-grow:1;"><div class="display" style="font-size: 24px;">Bebidas calientes</div><div style="font-size: 12.5px; color: #B7C4C2; margin-top: 2px; font-weight: 600;">6 productos disponibles</div></div>
+        <div style="flex-grow:1;"><div class="display" style="font-size: 24px;">{{ catName }}</div><div style="font-size: 12.5px; color: #B7C4C2; margin-top: 2px; font-weight: 600;">{{ catCount }} disponibles</div></div>
       </div>
     </div>
     <div style="padding: 18px 24px 28px 24px;">
-      <div class="item" onClick="{{ openCapp }}">
-        <div class="thumb" style="background: linear-gradient(150deg, #C79A5B, #7A4A28);"></div>
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div class="display" style="font-size: 17px;">Cappuccino</div><div style="margin-top: 2px; color: #8C8272; font-size: 12.5px; font-weight: 600;">Espresso doble con leche cremada</div></div>
-        <div class="price" style="align-self: center;">$8.500</div>
-      </div>
-      <div class="item" onClick="{{ openChai }}">
-        <div class="thumb" style="background: linear-gradient(150deg, #8BA98F, #375B45);"></div>
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div style="display:flex; align-items:center; gap:8px;"><div class="display" style="font-size: 17px;">Té chai</div><span class="tag" style="background:#315659; color:#F6EFE1;">Nuevo</span></div><div style="margin-top: 2px; color: #8C8272; font-size: 12.5px; font-weight: 600;">Especias, leche y un toque de miel</div></div>
-        <div class="price" style="align-self: center;">$9.000</div>
-      </div>
-      <div class="item" onClick="{{ openChoco }}">
-        <div class="thumb" style="background: #F7F1E3; border: 1px dashed #D9C79A; display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BFA76B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div class="display" style="font-size: 17px;">Chocolate caliente</div><div style="margin-top: 2px; color: #8C8272; font-size: 12.5px; font-weight: 600;">Cacao artesanal con leche</div></div>
-        <div class="price" style="align-self: center;">$7.500</div>
-      </div>
-      <div class="item" onClick="{{ openAmericano }}" style="margin-bottom: 0;">
-        <div class="thumb" style="background: linear-gradient(150deg, #D9B98A, #9C6B3E);"></div>
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;"><div class="display" style="font-size: 17px;">Americano</div></div>
-        <div class="price" style="align-self: center;">$5.500</div>
-      </div>
+      <sc-for list="{{ catItems }}" as="p" hint-placeholder-count="6">
+        <div class="item" onClick="{{ p.open }}">
+          <div class="thumb" style="background: {{ p.grad }};"><svg class="thumb-cam" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+          <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;"><div class="display" style="font-size: 16px; line-height:1.15;">{{ p.name }}</div><sc-if value="{{ p.nuevo }}" hint-placeholder-val="{{ false }}"><span class="tag" style="background:#315659; color:#F6EFE1;">Nuevo</span></sc-if><sc-if value="{{ p.bajo }}" hint-placeholder-val="{{ false }}"><span class="tag-stock">Últimas</span></sc-if></div>
+            <div style="margin-top: 3px; color: #8C8272; font-size: 12px; font-weight: 500; line-height:1.35;">{{ p.desc }}</div>
+          </div>
+          <div class="price" style="align-self: center;">{{ p.priceF }}</div>
+        </div>
+      </sc-for>
     </div>
   </div>
   </sc-if>
@@ -165,29 +163,30 @@
   <!-- ============ DETALLE PRODUCTO ============ -->
   <sc-if value="{{ isDet }}" hint-placeholder-val="{{ false }}">
   <div class="screen">
-    <div style="height: 280px; position: relative; display: flex; align-items: center; justify-content: center; background: {{ prod.grad }}; border-radius: 0 0 26px 26px;">
+    <div style="height: 270px; position: relative; display: flex; align-items: center; justify-content: center; background: {{ prod.grad }}; border-radius: 0 0 26px 26px;">
       <div class="back" onClick="{{ backFromDet }}" style="position: absolute; top: 20px; left: 20px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B2620" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
       <sc-if value="{{ prod.showTag }}" hint-placeholder-val="{{ true }}"><span class="tag" style="position: absolute; top: 24px; right: 20px; background: #D7BC77; color: #2B3F2F;">{{ prod.tag }}</span></sc-if>
-      <svg width="62" height="62" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M4 8h14v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/></svg>
+      <div style="text-align:center;"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2z"/><circle cx="12" cy="13" r="3.5"/></svg><div style="color:rgba(255,255,255,0.7); font-size:10px; font-weight:800; letter-spacing:1px; margin-top:6px;">FOTO PRONTO</div></div>
     </div>
     <div style="padding: 22px 24px 30px 24px;">
       <div class="eyebrow" style="color: #B0843C;">{{ prod.cat }}</div>
       <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-top: 8px;">
-        <div class="display" style="font-size: 27px; line-height: 1.05;">{{ prod.name }}</div>
-        <div class="display" style="font-size: 25px; color: #315659; white-space: nowrap;">{{ prod.price }}</div>
+        <div class="display" style="font-size: 26px; line-height: 1.08;">{{ prod.name }}</div>
+        <div class="display" style="font-size: 24px; color: #315659; white-space: nowrap;">{{ prod.priceF }}</div>
       </div>
       <p style="margin-top: 12px; color: #6E6656; font-size: 14.5px; line-height: 1.6; font-weight: 500;">{{ prod.desc }}</p>
-      <sc-if value="{{ prod.showNote }}" hint-placeholder-val="{{ true }}">
-      <div style="margin-top: 18px; display: flex; align-items: center; gap: 10px; background: #FFFCF4; border: 1px solid #EEE1C6; border-left: 4px solid #D7BC77; border-radius: 14px; padding: 14px 16px;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <div style="font-size: 13px; color: #6E6656; line-height: 1.4; font-weight: 600;">{{ prod.note }}</div>
-      </div>
+      <sc-if value="{{ prod.bajo }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top: 16px; display: inline-flex; align-items: center; gap: 8px; background: #F3E6C8; color: #9A7A2E; border-radius: 999px; padding: 7px 14px; font-size: 12.5px; font-weight: 800;">⚠ Quedan pocas unidades</div>
       </sc-if>
       <div style="margin-top: 24px;">
-        <div class="eyebrow" style="color: #B0843C; margin-bottom: 2px;">➕ Adiciones sugeridas</div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid #EEE1C6;"><span style="font-size: 14px; color: #3A362C; font-weight: 600;">Shot extra de espresso</span><span class="price" style="font-size: 17px;">+$2.000</span></div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid #EEE1C6;"><span style="font-size: 14px; color: #3A362C; font-weight: 600;">Leche de almendras</span><span class="price" style="font-size: 17px;">+$1.500</span></div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid #EEE1C6;"><span style="font-size: 14px; color: #3A362C; font-weight: 600;">Crema batida</span><span class="price" style="font-size: 17px;">+$1.000</span></div>
+        <div class="eyebrow" style="color: #B0843C; margin-bottom: 2px;">➕ Adiciones</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid #EEE1C6;"><span style="font-size: 14px; color: #3A362C; font-weight: 600;">Arequipe</span><span class="price" style="font-size: 16px;">+$2.000</span></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid #EEE1C6;"><span style="font-size: 14px; color: #3A362C; font-weight: 600;">Pistachos</span><span class="price" style="font-size: 16px;">+$2.000</span></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid #EEE1C6;"><span style="font-size: 14px; color: #3A362C; font-weight: 600;">Pistachos y almendras</span><span class="price" style="font-size: 16px;">+$3.000</span></div>
+      </div>
+      <div style="margin-top: 22px; display: flex; align-items: center; gap: 10px; background: #FFFCF4; border: 1px solid #EEE1C6; border-radius: 14px; padding: 14px 16px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B0843C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v13L3 16v-5z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+        <div style="font-size: 13px; color: #6E6656; line-height: 1.4; font-weight: 600;">Pídelo en tu mesa. El pago se realiza en barra.</div>
       </div>
     </div>
   </div>
@@ -419,23 +418,124 @@ class Component extends DCLogic {
     const s = this.state || {};
     const screen = s.screen || 'home';
     const nav = (to, extra) => () => this.setState(Object.assign({ screen: to }, extra || {}));
+    const f = (n) => '$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
-    const P = {
-      latte: { cat: 'Bebidas calientes', name: 'Latte de calabaza', price: '$12.000', grad: 'linear-gradient(160deg,#35595B,#1C3634)', desc: 'Espresso de origen con leche cremada, puré de calabaza asada y especias: canela, nuez moscada y jengibre. Con un toque de crema y caramelo especiado.', showTag: true, tag: '✦ Temporada', showNote: true, note: 'Disponible solo en octubre. Edición de temporada.' },
-      capp: { cat: 'Bebidas calientes', name: 'Cappuccino', price: '$8.500', grad: 'linear-gradient(160deg,#C79A5B,#6E4522)', desc: 'Espresso doble coronado con leche sedosa y una espuma tibia que aguanta hasta el último sorbo.', showTag: false, tag: '', showNote: false, note: '' },
-      chai: { cat: 'Bebidas calientes', name: 'Té chai', price: '$9.000', grad: 'linear-gradient(160deg,#8BA98F,#375B45)', desc: 'Mezcla de especias, leche vaporizada y un toque de miel. Reconfortante y aromático.', showTag: true, tag: 'Nuevo', showNote: false, note: '' },
-      choco: { cat: 'Bebidas calientes', name: 'Chocolate caliente', price: '$7.500', grad: 'linear-gradient(160deg,#6E4522,#3E2413)', desc: 'Chocolate fundido lentamente en leche cremosa, espeso y reconfortante, con un final apenas amargo.', showTag: false, tag: '', showNote: false, note: '' },
-      americano: { cat: 'Bebidas calientes', name: 'Americano', price: '$5.500', grad: 'linear-gradient(160deg,#D9B98A,#9C6B3E)', desc: 'Espresso alargado con agua caliente. Ligero, para acompañar cualquier momento.', showTag: false, tag: '', showNote: false, note: '' },
-      coldbrew: { cat: 'Bebidas frías', name: 'Cold brew de naranja', price: '$10.500', grad: 'linear-gradient(160deg,#C79A5B,#7A4A28)', desc: 'Extraído en frío durante 18 horas con un toque cítrico de naranja. Suave, refrescante y con poca acidez.', showTag: true, tag: 'Nuevo', showNote: false, note: '' },
-      cheesecake: { cat: 'Productos dulces', name: 'Cheesecake de maracuyá', price: '$9.500', grad: 'linear-gradient(160deg,#D9B98A,#9C6B3E)', desc: 'Base de galleta artesanal y relleno cremoso, rematado con maracuyá recién hecho que corta el dulce con acidez brillante.', showTag: true, tag: 'Nuevo', showNote: false, note: '' }
+    // ---- Real menu (available items only: Disponible / Bajo stock) ----
+    const GRAD = {
+      'Bebidas calientes': 'linear-gradient(150deg,#C79A5B,#6E4522)',
+      'Productos dulces': 'linear-gradient(150deg,#CE7E93,#7E3B4E)',
+      'Productos salados': 'linear-gradient(150deg,#C4A24E,#7A5A22)',
+      'Bebidas frías': 'linear-gradient(150deg,#5E9DB0,#2C5566)',
+      'Licores': 'linear-gradient(150deg,#8A6FB0,#3E2A5E)'
+    };
+    // [name, price, bajoStock(bool), desc, nuevo(bool)]
+    const RAW = {
+      'Bebidas calientes': [
+        ['Capuccino caliente', 7500, false, 'Espresso con leche cremada y una capa de espuma sedosa.'],
+        ['Latte caliente', 6000, false, 'Espresso suave abrazado por abundante leche vaporizada.'],
+        ['Americano caliente', 4500, false, 'Espresso alargado con agua caliente; ligero y aromático.'],
+        ['Americano doble caliente', 6500, false, 'Doble carga de espresso con agua; intenso y para despertar.'],
+        ['Espresso caliente', 4000, false, 'Un shot corto e intenso de café de origen.'],
+        ['Espresso doble caliente', 7000, false, 'Doble shot para los que van en serio con el café.'],
+        ['Capuccino caliente con vainilla', 8000, false, 'Capuccino con un aroma suave y envolvente de vainilla.'],
+        ['Capuccino caliente de maní', 10500, false, 'Capuccino cremoso con el sabor tostado del maní.'],
+        ['Mocaccino caliente', 10500, true, 'Espresso, chocolate y leche cremada; para los golosos.'],
+        ['Colombianazo caliente', 5500, false, 'Café con panela y nuestro toque de la casa; dulce y reconfortante.'],
+        ['Afogatto', 8000, false, 'Espresso caliente vertido sobre helado que se derrite lento.'],
+        ['Afogatto maní', 10000, false, 'Nuestro affogato con el toque tostado del maní.'],
+        ['Café bombón', 8000, true, 'Espresso sobre leche condensada; dulce y en capas.'],
+        ['Te chai caliente', 8500, false, 'Té negro con especias y leche; cálido y aromático.'],
+        ['Milo caliente', 7000, false, 'El clásico achocolatado, cremoso y nostálgico.'],
+        ['Chocolate en agua caliente', 5000, false, 'Chocolate fundido en agua; intenso y reconfortante.'],
+        ['Chocolate en leche caliente', 6500, false, 'Chocolate cremoso preparado en leche.'],
+        ['Chocolate en leche con masmelos', 8500, false, 'Chocolate en leche coronado con masmelos que se funden.'],
+        ['Aromática de frutos amarillos', 7000, true, 'Infusión caliente de frutas amarillas; dulce y reconfortante.'],
+        ['Aromática de frutos rojos', 7000, true, 'Infusión caliente de frutos rojos; aromática y con un punto ácido.']
+      ],
+      'Productos dulces': [
+        ['Vasca tradicional', 14000, false, 'Cheesecake vasco de centro cremoso y superficie caramelizada.'],
+        ['Torta de chocolate', 8000, false, 'Húmeda, intensa y profundamente chocolatosa.'],
+        ['Torta de limón y amapola', 12500, false, 'Bizcocho cítrico con semillas de amapola.'],
+        ['Torta de banano y chocolate', 10000, true, 'Banano maduro y chocolate en un bizcocho húmedo.'],
+        ['Galleta de nutella y helado al sartén', 14000, false, 'Galleta tibia al sartén con nutella y una bola de helado.', true],
+        ['Cereal del Capitán Crunch', 8500, false, 'Un bowl nostálgico del cereal favorito de la infancia.', true],
+        ['Brownie', 7000, true, 'Brownie denso y chocolatoso, de bordes crujientes.'],
+        ['Brownie con helado', 12000, true, 'Brownie tibio con una bola de helado que se derrite encima.'],
+        ['Alfajor', 4000, false, 'Dos galletas suaves unidas por generoso arequipe.'],
+        ['Galleta rellena de nutella', 7000, true, 'Galleta suave con corazón fundido de nutella.'],
+        ['Galleta de nutella y helado', 12000, true, 'Galleta de nutella con helado; imposible resistirse.'],
+        ['Copa de frutos rojos', 16000, true, 'Capas de crema, bizcocho y frutos rojos frescos.'],
+        ['Croissant con chantillí y fresas', 10000, true, 'Croissant hojaldrado con chantillí y fresas frescas.']
+      ],
+      'Productos salados': [
+        ['Croissant de mantequilla', 5500, false, 'Hojaldre mantecoso, crujiente por fuera y aireado por dentro.'],
+        ['Waffle de yuca', 11000, false, 'Waffle de yuca, dorado y crocante.'],
+        ['Waffle de yuca con mermelada de frutos rojos', 13000, true, 'Waffle de yuca con mermelada casera de frutos rojos.'],
+        ['Waffle de yuca con mermelada de frutos amarillos', 13000, true, 'Waffle de yuca con mermelada casera de frutos amarillos.'],
+        ['Palito de queso', 5000, true, 'Palito horneado, dorado y lleno de queso.'],
+        ['Pastel de carne y chicharrón', 7500, true, 'Hojaldre relleno de carne y chicharrón crocante.'],
+        ['Deditos de queso x4', 12000, true, 'Cuatro deditos crocantes rellenos de queso fundido.']
+      ],
+      'Bebidas frías': [
+        ['Cold Brew', 10000, false, 'Café extraído en frío por 18 horas; suave, dulce y sin amargor.', true],
+        ['Latte frío', 9000, false, 'Espresso y leche fría; suave y refrescante.'],
+        ['Latte chai frío', 11000, false, 'Chai especiado con leche, servido bien frío.'],
+        ['Latte de maní frío', 11000, false, 'Latte frío con el sabor tostado del maní.'],
+        ['Capuccino frío', 9000, false, 'Nuestro capuccino servido bien frío sobre hielo.'],
+        ['Americano frío', 5000, false, 'Espresso alargado y helado; refrescante y ligero.'],
+        ['Te chai frío', 9000, false, 'Té chai especiado sobre hielo; especias que refrescan.'],
+        ['Limonada de coco', 11000, false, 'Cremosa limonada de coco, batida al momento.'],
+        ['Limonada de cereza', 11000, false, 'Limonada refrescante con el dulzor jugoso de la cereza.'],
+        ['Limonada de café', 10000, false, 'Refrescante mezcla de limonada con un shot de café.'],
+        ['Soda michelada', 7000, false, 'Soda burbujeante con el toque ácido y salado de la michelada.'],
+        ['Latte de óreo frío', 11000, true, 'Latte frío con galleta óreo; dulce y cremoso.'],
+        ['Mocaccino frío', 11000, true, 'Café, chocolate y leche, servidos bien fríos.'],
+        ['Milo frío', 7500, true, 'Milo cremoso y helado; nostalgia para el calor.'],
+        ['Soda saborizada de frutos amarillos', 11000, true, 'Soda efervescente con el dulzor de frutas amarillas.'],
+        ['Soda saborizada de frutos rojos', 11000, true, 'Soda efervescente con el sabor de frutos rojos.'],
+        ['Coca Cola 237ml', 4000, false, 'La clásica, bien fría.'],
+        ['Qatro 237 ml', 4000, false, 'Refresco de lima-limón, burbujeante y fresco.'],
+        ['Bretaña', 5000, false, 'Soda dulce y burbujeante; un clásico de siempre.'],
+        ['Soda Hatsu', 6500, false, 'Soda funcional con un delicado toque floral.'],
+        ['Te Hatsu', 7000, false, 'Té frío ligero y refrescante.'],
+        ['Botella de agua 600ml', 3000, false, 'Agua pura para acompañar tu momento.'],
+        ['Botella de agua 300ml', 1500, false, 'Agua pura, en tamaño personal.']
+      ],
+      'Licores': [
+        ['Cerveza artesanal Spezia Stout (negra)', 14000, false, 'Stout artesanal: tostada, con notas a café y chocolate.', true],
+        ['Heineken 330ml', 9500, false, 'Lager internacional, refrescante y con cuerpo.'],
+        ['Club colombia de trigo', 7000, false, 'Cerveza de trigo, suave y aromática.'],
+        ['Club colombia dorada', 7000, true, 'Lager premium, dorada y equilibrada.'],
+        ['3 Cordilleras roja', 9000, false, 'Roja artesanal, maltosa y con carácter.'],
+        ['3 Cordilleras rosada', 9000, true, 'Artesanal afrutada y ligera, fácil de disfrutar.'],
+        ['Águila', 5500, false, 'Lager ligera y bien fría.'],
+        ['Águila light', 5500, true, 'Águila en versión ligera y suave.'],
+        ['Póker', 5500, false, 'La cerveza para compartir entre amigos.'],
+        ['Costeñita', 5000, false, 'La cervecita pequeña, perfecta para brindar.'],
+        ['Trago de aguardiente tapa roja', 5000, false, 'Un trago del clásico anisado.']
+      ]
     };
 
-    const mk = (o) => Object.assign({
-      bucket: o.mins <= 20 ? 'corto' : (o.mins <= 45 ? 'medio' : 'largo'),
-      players: o.min + '–' + o.max,
-      timeLabel: o.mins + ' min'
-    }, o);
+    const MENU = [];
+    Object.keys(RAW).forEach(cat => {
+      RAW[cat].forEach(r => {
+        MENU.push({ name: r[0], cat: cat, price: r[1], bajo: !!r[2], desc: r[3], nuevo: !!r[4], grad: GRAD[cat] });
+      });
+    });
+    const openProd = (item, from) => nav('detalle', { prod: Object.assign({}, item, { priceF: f(item.price), showTag: !!item.nuevo, tag: 'Nuevo' }), detFrom: from });
+    const decoProd = (item, from) => Object.assign({}, item, { priceF: f(item.price), open: openProd(item, from) });
 
+    const catName = s.cat || 'Bebidas calientes';
+    const catItems = MENU.filter(m => m.cat === catName).map(m => decoProd(m, 'categoria'));
+    const count = (c) => MENU.filter(m => m.cat === c).length;
+    const goCat = (c) => nav('categoria', { cat: c });
+
+    // hero (producto del mes) + novedades from real data
+    const hero = MENU.find(m => m.name === 'Vasca tradicional');
+    const novedades = MENU.filter(m => m.nuevo).slice(0, 3).map(m => decoProd(m, 'home'));
+
+    // ---- Board games (real) ----
+    const mk = (o) => Object.assign({ bucket: o.mins <= 20 ? 'corto' : (o.mins <= 45 ? 'medio' : 'largo'), players: o.min + '–' + o.max, timeLabel: o.mins + ' min' }, o);
     const GAMES = [
       mk({ id: 'catan', name: 'Catán', min: 3, max: 4, mins: 60, cat: 'Estrategia', age: '10+', diff: 'Media', grad: 'linear-gradient(150deg,#B5762F,#7A4A1E)', desc: 'Comercia, construye y coloniza la isla. Un clásico moderno, distinto en cada partida.' }),
       mk({ id: 'azul', name: 'Azul', min: 2, max: 4, mins: 35, cat: 'Abstracto', age: '8+', diff: 'Media', grad: 'linear-gradient(150deg,#4E7C8B,#2C4A55)', desc: 'Compón mosaicos de azulejos coloridos. Elegante y muy fácil de enseñar.' }),
@@ -452,12 +552,9 @@ class Component extends DCLogic {
       mk({ id: 'jenga', name: 'Jenga', min: 1, max: 8, mins: 15, cat: 'Destreza', age: '6+', diff: 'Baja', grad: 'linear-gradient(150deg,#B58A4E,#7A5A2A)', desc: 'Saca y apila bloques sin que la torre caiga. Tensión pura hasta el final.' }),
       mk({ id: 'scrabble', name: 'Scrabble', min: 2, max: 4, mins: 60, cat: 'Palabras', age: '10+', diff: 'Media', grad: 'linear-gradient(150deg,#3E7A6E,#1F4A42)', desc: 'Forma palabras y suma puntos con las letras. Un clásico para lucirse.' })
     ];
-
-    const byId = {};
-    GAMES.forEach(g => { byId[g.id] = g; });
+    const byId = {}; GAMES.forEach(g => { byId[g.id] = g; });
     const openGame = (g) => nav('juego', { juego: g, juegoFrom: screen });
-    const deco = (g) => Object.assign({}, g, { open: openGame(g) });
-
+    const decoG = (g) => Object.assign({}, g, { open: openGame(g) });
     const HOUSE = [
       mk({ id: 'morc', name: 'Mor-c', min: 2, max: 5, mins: 30, cat: 'Casa', age: '10+', diff: 'Media', grad: 'linear-gradient(150deg,#35595B,#1E3A38)', desc: 'Creado en Gógoblu. Pídelo y descúbrelo.' }),
       mk({ id: 'creactiva', name: 'Creactiva', min: 3, max: 8, mins: 20, cat: 'Casa', age: '8+', diff: 'Baja', grad: 'linear-gradient(150deg,#6E4522,#3E2413)', desc: 'Creado en Gógoblu. Ingenio y creatividad en grupo.' })
@@ -469,52 +566,45 @@ class Component extends DCLogic {
     const setP = (v) => () => this.setState({ rec: Object.assign({}, rec, { players: rec.players === v ? null : v }) });
     const setT = (v) => () => this.setState({ rec: Object.assign({}, rec, { time: rec.time === v ? null : v }) });
     const chip = (on) => on ? 'chip-on' : 'chip';
-
     const matchP = (g) => !p || (p === 6 ? g.max >= 6 : (g.min <= p && g.max >= p));
     const matchT = (g) => !t || g.bucket === t;
-    const results = GAMES.filter(g => matchP(g) && matchT(g)).map(deco);
+    const results = GAMES.filter(g => matchP(g) && matchT(g)).map(decoG);
 
     return {
-      isHome: screen === 'home',
-      isCat: screen === 'categoria',
-      isDet: screen === 'detalle',
-      isJuegos: screen === 'juegos',
-      isRec: screen === 'recomendador',
-      isJuego: screen === 'juego',
-      isSudoku: screen === 'sudoku',
-      isInfo: screen === 'info',
+      isHome: screen === 'home', isCat: screen === 'categoria', isDet: screen === 'detalle',
+      isJuegos: screen === 'juegos', isRec: screen === 'recomendador', isJuego: screen === 'juego',
+      isSudoku: screen === 'sudoku', isInfo: screen === 'info',
 
-      goHome: nav('home'),
-      goCat: nav('categoria'),
-      goJuegos: nav('juegos'),
-      goRec: nav('recomendador'),
-      goSudoku: nav('sudoku'),
-      goInfo: nav('info'),
+      goHome: nav('home'), goJuegos: nav('juegos'), goRec: nav('recomendador'),
+      goSudoku: nav('sudoku'), goInfo: nav('info'),
       backFromDet: nav(s.detFrom || 'categoria'),
       backFromJuego: nav(s.juegoFrom === 'recomendador' ? 'recomendador' : 'juegos'),
 
-      openLatte: nav('detalle', { prod: P.latte, detFrom: 'home' }),
-      openColdBrew: nav('detalle', { prod: P.coldbrew, detFrom: 'home' }),
-      openCheesecake: nav('detalle', { prod: P.cheesecake, detFrom: 'home' }),
-      openCapp: nav('detalle', { prod: P.capp, detFrom: 'categoria' }),
-      openChai: nav('detalle', { prod: P.chai, detFrom: 'categoria' }),
-      openChoco: nav('detalle', { prod: P.choco, detFrom: 'categoria' }),
-      openAmericano: nav('detalle', { prod: P.americano, detFrom: 'categoria' }),
+      openCalientes: goCat('Bebidas calientes'),
+      openDulces: goCat('Productos dulces'),
+      openSalados: goCat('Productos salados'),
+      openFrias: goCat('Bebidas frías'),
+      openLicores: goCat('Licores'),
+      cCalientes: count('Bebidas calientes'), cDulces: count('Productos dulces'),
+      cSalados: count('Productos salados'), cFrias: count('Bebidas frías'), cLicores: count('Licores'),
 
-      featured: HOUSE.map(deco),
-      popular: [byId.catan, byId.azul, byId.uno, byId.themind].map(deco),
+      catName: catName, catCount: catItems.length, catItems: catItems,
 
+      hero: Object.assign({}, hero, { priceF: f(hero.price) }),
+      openHero: openProd(hero, 'home'),
+      novedades: novedades,
+
+      prod: s.prod || Object.assign({}, hero, { priceF: f(hero.price), showTag: true, tag: '✦ Temporada' }),
+
+      featured: HOUSE.map(decoG),
+      popular: [byId.catan, byId.azul, byId.uno, byId.themind].map(decoG),
       pClass2: chip(p === 2), pClass3: chip(p === 3), pClass4: chip(p === 4), pClass5: chip(p === 5), pClass6: chip(p === 6),
       tClassS: chip(t === 'corto'), tClassM: chip(t === 'medio'), tClassL: chip(t === 'largo'),
       setP2: setP(2), setP3: setP(3), setP4: setP(4), setP5: setP(5), setP6: setP(6),
       setTS: setT('corto'), setTM: setT('medio'), setTL: setT('largo'),
       clearRec: () => this.setState({ rec: {} }),
-      results: results,
-      recCount: results.length + (results.length === 1 ? ' juego' : ' juegos'),
-      hasResults: results.length > 0,
-      noResults: results.length === 0,
-
-      prod: s.prod || P.latte,
+      results: results, recCount: results.length + (results.length === 1 ? ' juego' : ' juegos'),
+      hasResults: results.length > 0, noResults: results.length === 0,
       juego: s.juego || byId.catan
     };
   }
